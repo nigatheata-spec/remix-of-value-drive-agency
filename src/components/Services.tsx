@@ -50,8 +50,8 @@ const Services = () => {
       <div className="absolute inset-0 opacity-20">
         <GradFlow config={{
           color1: '#003DFA',
-          color2: '#00102A',
-          color3: '#001a6e',
+          color2: '#000000',
+          color3: '#FFFFFF',
           speed: 0.2,
           scale: 2,
           type: 'smoke',

@@ -25,12 +25,12 @@ const CTA = () => {
             <GradFlow
               config={{
                 color1: '#003DFA',
-                color2: '#001a6e',
-                color3: '#8BED02',
-                speed: 0.3,
-                scale: 1.2,
+                color2: '#000000',
+                color3: '#FFFFFF',
+                speed: 0.25,
+                scale: 1.3,
                 type: 'stripe',
-                noise: 0.06,
+                noise: 0.08,
               }}
             />
           </div>

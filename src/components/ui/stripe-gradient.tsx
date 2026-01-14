@@ -13,10 +13,10 @@ export const StripeGradient = ({ className, children, type = 'stripe' }: StripeG
       <GradFlow
         config={{
           color1: '#003DFA', // Royal Blue
-          color2: '#8BED02', // Neon Lime
-          color3: '#00102A', // Midnight Navy
-          speed: 0.4,
-          scale: 1.2,
+          color2: '#000000', // Pure Black
+          color3: '#FFFFFF', // Pure White
+          speed: 0.25,
+          scale: 1.3,
           type: type,
           noise: 0.08,
         }}
