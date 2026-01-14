@@ -10,7 +10,7 @@ const Hero = () => {
         <GradFlow config={{
         color1: '#003DFA',
         color2: '#001a6e',
-        color3: '#8BED02',
+        color3: '#0052FF',
         speed: 0.3,
         scale: 1.2,
         type: 'stripe',
