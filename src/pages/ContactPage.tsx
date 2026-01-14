@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StarDecoration from "@/components/StarDecoration";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -63,20 +62,6 @@ const ContactPage = () => {
       <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
-        <motion.div 
-          className="absolute top-24 left-[10%]"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          <StarDecoration size="md" variant="lime" />
-        </motion.div>
-        <motion.div 
-          className="absolute bottom-10 right-[10%]"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        >
-          <StarDecoration size="lg" variant="blue" />
-        </motion.div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.span
