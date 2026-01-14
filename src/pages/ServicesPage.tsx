@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StarDecoration from "@/components/StarDecoration";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -87,13 +86,6 @@ const ServicesPage = () => {
       <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
-        <motion.div 
-          className="absolute top-24 right-[10%]"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          <StarDecoration size="lg" variant="lime" />
-        </motion.div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.span
@@ -150,9 +142,6 @@ const ServicesPage = () => {
                   ))}
                 </ul>
 
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <StarDecoration size="sm" variant={service.color === 'primary' ? 'blue' : 'lime'} />
-                </div>
               </motion.div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import StarDecoration from "./StarDecoration";
+import { CheckCircle2 } from "lucide-react";
 import logoBlue from "@/assets/logo-blue.png";
 
 const About = () => {
@@ -55,7 +55,7 @@ const About = () => {
                   className="group"
                 >
                   <div className="flex items-start gap-3">
-                    <StarDecoration size="sm" variant="blue" animated={false} />
+                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-semibold text-foreground">{value.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{value.desc}</p>
@@ -88,13 +88,6 @@ const About = () => {
                     className="w-48 h-48 md:w-64 md:h-64 object-contain"
                   />
 
-                  {/* Floating decorations */}
-                  <div className="absolute -top-4 -right-4">
-                    <StarDecoration size="lg" variant="lime" />
-                  </div>
-                  <div className="absolute -bottom-4 -left-4">
-                    <StarDecoration size="md" variant="blue" />
-                  </div>
                 </div>
               </div>
             </div>

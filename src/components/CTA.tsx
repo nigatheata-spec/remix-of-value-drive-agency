@@ -3,7 +3,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, MessageCircle, Mail, Phone } from "lucide-react";
 import { Button } from "./ui/button";
-import StarDecoration from "./StarDecoration";
 import { GradFlow } from "gradflow";
 import { Link } from "react-router-dom";
 
@@ -35,14 +34,6 @@ const CTA = () => {
             />
           </div>
 
-          {/* Background decorations */}
-          <div className="absolute inset-0 star-pattern opacity-10" />
-          <div className="absolute top-10 right-10 opacity-30">
-            <StarDecoration size="lg" variant="white" />
-          </div>
-          <div className="absolute bottom-10 left-10 opacity-20">
-            <StarDecoration size="md" variant="lime" />
-          </div>
 
           {/* Content */}
           <div className="relative z-10 max-w-3xl mx-auto text-center">
