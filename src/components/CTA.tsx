@@ -25,7 +25,7 @@ const CTA = () => {
               config={{
                 color1: '#003DFA',
                 color2: '#000000',
-                color3: '#FFFFFF',
+                color3: '#1a1a2e',
                 speed: 0.25,
                 scale: 1.3,
                 type: 'stripe',
@@ -33,6 +33,8 @@ const CTA = () => {
               }}
             />
           </div>
+          {/* Dark overlay for better contrast */}
+          <div className="absolute inset-0 bg-midnight/30" />
 
 
           {/* Content */}

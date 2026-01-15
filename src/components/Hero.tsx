@@ -106,7 +106,7 @@ const Hero = () => {
             value: "5+",
             label: "Years Experience"
           }].map((stat, index) => <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">{stat.value}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
                   <div className="text-sm text-white/70">{stat.label}</div>
                 </div>)}
             </motion.div>
