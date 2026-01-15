@@ -233,7 +233,7 @@ const AboutPage = () => {
             {[
               { value: 200, suffix: "+", label: "Projects Delivered" },
               { value: 50, suffix: "+", label: "Happy Clients" },
-              { value: 95, suffix: "%", label: "Client Retention" },
+              { value: 5, suffix: "+", label: "Years Experience" },
               { value: 15, suffix: "+", label: "Team Members" },
             ].map((stat, index) => (
               <motion.div

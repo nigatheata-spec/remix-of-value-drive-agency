@@ -92,16 +92,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Stats card floating */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -left-6 bg-secondary text-secondary-foreground rounded-xl p-6 shadow-xl"
-            >
-              <div className="text-3xl font-bold">95%</div>
-              <div className="text-sm opacity-80">Client Satisfaction</div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
