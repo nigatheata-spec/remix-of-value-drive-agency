@@ -43,7 +43,7 @@ const Hero = () => {
         }} className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
               Grow Smarter.
               <br />
-              <span className="text-gradient-royal">Deliver Real Value.</span>
+              <span className="text-primary">Deliver Real Value.</span>
             </motion.h1>
 
             {/* Subtitle */}
