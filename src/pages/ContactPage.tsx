@@ -77,7 +77,7 @@ const ContactPage = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
           >
-            Let's <span className="text-gradient-royal">Connect</span>
+            Let's <span className="text-primary">Connect</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

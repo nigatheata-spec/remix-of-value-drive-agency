@@ -59,7 +59,7 @@ const Process = () => {
           delay: 0.1
         }} className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
               How We Deliver{" "}
-              <span className="text-gradient-royal">Results</span>
+              <span className="text-primary">Results</span>
             </motion.h2>
             <motion.p initial={{
           opacity: 0,

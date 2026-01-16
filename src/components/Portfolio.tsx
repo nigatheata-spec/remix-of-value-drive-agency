@@ -73,7 +73,7 @@ const Portfolio = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4"
             >
-              Latest <span className="text-gradient-royal">Work</span>
+              Latest <span className="text-primary">Work</span>
             </motion.h2>
           </div>
           <motion.div
