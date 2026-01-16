@@ -102,7 +102,7 @@ const PortfolioPage = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Crafting Success
               <br />
-              <span className="text-gradient-royal">Stories</span>
+              <span className="text-white">Stories</span>
             </h1>
             <p className="text-xl text-white/60 max-w-2xl">
               Explore our portfolio of transformative projects that have helped brands 
@@ -234,7 +234,7 @@ const PortfolioPage = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Be Our Next
                 <br />
-                <span className="text-gradient-royal">Success Story?</span>
+                <span className="text-white">Success Story?</span>
               </h2>
               <p className="text-xl text-white/70 mb-10">
                 Let's create something extraordinary together.

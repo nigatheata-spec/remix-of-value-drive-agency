@@ -26,7 +26,7 @@ const About = () => {
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6 leading-tight">
               We're Your True{" "}
-              <span className="text-gradient-royal">Growth Partner</span>
+              <span className="text-primary">Growth Partner</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Value Plus is a modern digital marketing and content agency built around one simple belief: 

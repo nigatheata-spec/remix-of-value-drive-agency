@@ -191,7 +191,7 @@ const AboutPage = () => {
           }} transition={{
             delay: 0.7,
             duration: 0.6
-          }} className="text-gradient-royal">
+          }} className="text-white">
               Market Brands
             </motion.span>
           </motion.h1>
@@ -276,7 +276,7 @@ const AboutPage = () => {
         } : {}} className="text-center mb-20">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Journey</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
-              From Idea to <span className="text-gradient-royal">Impact</span>
+              From Idea to <span className="text-primary">Impact</span>
             </h2>
           </motion.div>
 
@@ -343,7 +343,7 @@ const AboutPage = () => {
         } : {}} className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">How We Work</span>
             <h2 className="text-4xl md:text-5xl font-bold text-secondary-foreground mt-4">
-              Our <span className="text-gradient-royal">Principles</span>
+              Our <span className="text-primary">Principles</span>
             </h2>
           </motion.div>
 
@@ -409,7 +409,7 @@ const AboutPage = () => {
         } : {}} className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">The People</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
-              Meet the <span className="text-gradient-royal">Team</span>
+              Meet the <span className="text-primary">Team</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               A diverse group of strategists, creatives, and growth hackers united by one mission.
@@ -488,7 +488,7 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Ready to
               <br />
-              <span className="text-gradient-royal">Launch?</span>
+              <span className="text-white">Launch?</span>
             </h2>
             
             <p className="text-xl text-white/60 mb-10">
