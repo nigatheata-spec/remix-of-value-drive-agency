@@ -83,12 +83,15 @@ const ServicesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        
+        
+        <div className="container mx-auto px-6 relative z-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm font-semibold text-primary uppercase tracking-wider"
+            className="text-sm font-semibold text-accent uppercase tracking-wider"
           >
             What We Do
           </motion.span>
@@ -96,7 +99,7 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6 text-secondary-foreground"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
           >
             Our <span className="text-primary">Services</span>
           </motion.h1>
@@ -104,40 +107,41 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-secondary-foreground/70 max-w-xl"
+            className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl"
           >
-            End-to-end marketing solutions designed to accelerate your growth.
+            End-to-end marketing solutions designed to accelerate your growth and deliver measurable results.
           </motion.p>
         </div>
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-20" ref={ref}>
+      <section className="section-padding" ref={ref}>
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-colors"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover-lift"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className={`w-14 h-14 rounded-xl ${service.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} flex items-center justify-center mb-6`}>
+                  <service.icon className={`w-7 h-7 ${service.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
                 </div>
                 
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm mb-5">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1 h-1 rounded-full bg-primary" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {feature}
                     </li>
                   ))}
                 </ul>
+
               </motion.div>
             ))}
           </div>
@@ -145,25 +149,30 @@ const ServicesPage = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 bg-muted/30">
+      <section className="section-padding bg-secondary">
         <div className="container mx-auto px-6">
-          <h2 className="text-2xl font-bold text-center mb-10">
-            More Ways We Can Help
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+              More Ways We Can Help
+            </h2>
+            <p className="text-secondary-foreground/70">
+              Specialized services to complement your marketing strategy
+            </p>
+          </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {additionalServices.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-card rounded-lg p-5 text-center border border-border hover:border-primary/20 transition-colors"
+                className="bg-secondary-foreground/5 rounded-xl p-6 text-center hover:bg-secondary-foreground/10 transition-colors"
               >
-                <service.icon className="w-6 h-6 text-primary mx-auto mb-3" />
-                <h4 className="font-medium text-sm mb-1">{service.title}</h4>
-                <p className="text-xs text-muted-foreground">{service.desc}</p>
+                <service.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-secondary-foreground text-sm mb-1">{service.title}</h4>
+                <p className="text-xs text-secondary-foreground/60">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -171,15 +180,15 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary">
+      <section className="section-padding bg-primary">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-primary-foreground/80 mb-6 max-w-md mx-auto">
-            Let's discuss how we can help grow your business.
+          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+            Let's discuss how we can help grow your business with our tailored marketing solutions.
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="secondary" className="text-base px-8" asChild>
             <Link to="/contact">Schedule a Consultation</Link>
           </Button>
         </div>
