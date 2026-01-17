@@ -13,13 +13,18 @@ const Logo = ({ className = "", showText = false, variant = "default" }: LogoPro
   const logoSrc = variant === "white" ? logoWhite : variant === "dark" ? logoDark : logoBlue;
 
   return (
-    <div className={`flex items-center ${className}`}>
+    <motion.div 
+      className={`flex items-center ${className}`}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <img 
         src={logoSrc} 
         alt="Value Plus" 
-        className="h-10 md:h-12 w-auto transition-opacity duration-200"
+        className="h-10 md:h-12 w-auto"
       />
-    </div>
+    </motion.div>
   );
 };
 
