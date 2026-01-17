@@ -102,8 +102,8 @@ const Services = () => {
               className="group relative bg-midnight-light/50 hover:bg-midnight-light rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-accent/30 backdrop-blur-sm"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                <service.icon className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
+                <service.icon className="w-7 h-7 text-primary" />
               </div>
 
               {/* Content */}
