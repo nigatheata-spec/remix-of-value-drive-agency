@@ -1,44 +1,39 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Megaphone, TrendingUp, Globe, Video, BarChart3, ArrowRight } from "lucide-react";
+import { Palette, Megaphone, TrendingUp, Globe, Video, BarChart3 } from "lucide-react";
+import { GradFlow } from "gradflow";
 
 const services = [
   {
     icon: Palette,
     title: "Brand Identity",
-    description: "Create a unique, consistent visual system that defines your brand and makes it memorable.",
-    features: ["Logo Design", "Brand Guidelines", "Visual Identity"]
+    description: "Create a unique, consistent visual system that defines your brand and makes it memorable."
   },
   {
     icon: Megaphone,
-    title: "Social Media",
-    description: "Strategic content creation and community management across all social platforms.",
-    features: ["Content Strategy", "Community Management", "Analytics"]
+    title: "Social Media Management",
+    description: "Strategic content creation and community management across all social platforms."
   },
   {
     icon: TrendingUp,
     title: "Paid Advertising",
-    description: "Data-driven campaigns that maximize ROI across Google, Meta, and other platforms.",
-    features: ["Google Ads", "Meta Ads", "Performance Tracking"]
+    description: "Data-driven campaigns that maximize ROI across Google, Meta, and other platforms."
   },
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Beautiful, high-performing websites that convert visitors into customers.",
-    features: ["Custom Design", "Responsive Build", "SEO Optimization"]
+    title: "Website Development",
+    description: "Beautiful, high-performing websites that convert visitors into customers."
   },
   {
     icon: Video,
     title: "Content Production",
-    description: "Engaging videos, photography, and creative assets that tell your story.",
-    features: ["Video Production", "Photography", "Motion Graphics"]
+    description: "Engaging videos, photography, and creative assets that tell your story."
   },
   {
     icon: BarChart3,
     title: "Growth Strategy",
-    description: "Comprehensive planning and consulting to scale your business sustainably.",
-    features: ["Market Research", "Strategy Planning", "Consulting"]
+    description: "Comprehensive planning and consulting to scale your business sustainably."
   }
 ];
 
@@ -50,17 +45,30 @@ const Services = () => {
   });
 
   return (
-    <section id="services" className="section-padding bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-6" ref={ref}>
+    <section id="services" className="section-padding bg-secondary text-secondary-foreground relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 opacity-20">
+        <GradFlow config={{
+          color1: '#003DFA',
+          color2: '#000000',
+          color3: '#FFFFFF',
+          speed: 0.2,
+          scale: 2,
+          type: 'smoke',
+          noise: 0.03
+        }} />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm font-semibold text-primary uppercase tracking-wider"
+            className="text-sm font-semibold text-accent uppercase tracking-wider"
           >
-            What We Do
+            Our Services
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +76,8 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6"
           >
-            Services That <span className="text-primary">Drive Results</span>
+            Everything You Need to{" "}
+            <span className="text-accent">Grow</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -76,45 +85,32 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-secondary-foreground/70"
           >
-            End-to-end solutions to elevate your brand and accelerate growth.
+            Comprehensive solutions tailored to your needs—from brand strategy 
+            to execution, we've got you covered.
           </motion.p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="group relative bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-300"
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="group relative bg-midnight-light/50 hover:bg-midnight-light rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-accent/30 backdrop-blur-sm"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
+                <service.icon className="w-7 h-7 text-white" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-              <p className="text-secondary-foreground/60 mb-6 leading-relaxed">
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-secondary-foreground/60 leading-relaxed">
                 {service.description}
               </p>
-
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="text-sm text-secondary-foreground/50 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Arrow */}
-              <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </div>
             </motion.div>
           ))}
         </div>
