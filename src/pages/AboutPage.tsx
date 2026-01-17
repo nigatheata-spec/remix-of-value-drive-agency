@@ -8,23 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
 import logoWhite from "@/assets/logo-white.png";
-const timeline = [{
-  year: "2019",
-  title: "The Spark",
-  description: "Started as a freelance collective with a vision to change how brands communicate in the Arab world."
-}, {
-  year: "2020",
-  title: "First Office",
-  description: "Opened our Riyadh headquarters and assembled a team of 5 passionate marketers and creatives."
-}, {
-  year: "2022",
-  title: "Major Milestone",
-  description: "Crossed 100+ successful projects and expanded our service offerings to full-stack marketing."
-}, {
-  year: "2024",
-  title: "Regional Expansion",
-  description: "Now serving clients across the GCC with a team of 15+ specialists and growing."
-}];
 const team = [{
   name: "Ahmed Al-Rashid",
   role: "Founder & CEO",
@@ -107,8 +90,8 @@ const AboutPage = () => {
   });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const timelineRef = useRef(null);
-  const timelineInView = useInView(timelineRef, {
+  const storyRef = useRef(null);
+  const storyInView = useInView(storyRef, {
     once: true,
     margin: "-100px"
   });
@@ -264,69 +247,41 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="section-padding bg-background" ref={timelineRef}>
+      {/* Story Section */}
+      <section className="section-padding bg-background" ref={storyRef}>
         <div className="container mx-auto px-6">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={timelineInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} className="text-center mb-20">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Journey</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4">
-              From Idea to <span className="text-primary">Impact</span>
-            </h2>
-          </motion.div>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
+          <div className="max-w-4xl mx-auto">
             <motion.div initial={{
-            scaleY: 0
-          }} animate={timelineInView ? {
-            scaleY: 1
-          } : {}} transition={{
-            duration: 1,
-            delay: 0.3
-          }} className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary origin-top" style={{
-            transform: "translateX(-50%)"
-          }} />
-
-            {timeline.map((item, index) => <motion.div key={index} initial={{
             opacity: 0,
-            x: index % 2 === 0 ? -50 : 50
-          }} animate={timelineInView ? {
+            y: 30
+          }} animate={storyInView ? {
             opacity: 1,
-            x: 0
-          } : {}} transition={{
-            delay: 0.5 + index * 0.2,
-            duration: 0.6
-          }} className={`relative flex items-center mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                {/* Year Bubble */}
-                <motion.div initial={{
-              scale: 0
-            }} animate={timelineInView ? {
-              scale: 1
-            } : {}} transition={{
-              delay: 0.7 + index * 0.2,
-              type: "spring",
-              bounce: 0.5
-            }} className="absolute left-8 md:left-1/2 w-16 h-16 -translate-x-1/2 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-primary/30 z-10">
-                  {item.year}
-                </motion.div>
+            y: 0
+          } : {}} className="text-center mb-12">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Story</span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4">
+                From Idea to <span className="text-primary">Impact</span>
+              </h2>
+            </motion.div>
 
-                {/* Content Card */}
-                <div className={`ml-24 md:ml-0 md:w-5/12 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <motion.div whileHover={{
-                scale: 1.02,
-                y: -5
-              }} className="bg-card p-6 rounded-2xl border border-border shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </motion.div>
-                </div>
-              </motion.div>)}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={storyInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="prose prose-lg max-w-none text-center"
+            >
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Value Plus was born in 2019 from a simple belief: brands in the Arab world deserve 
+                marketing that truly understands them. What started as a freelance collective has 
+                grown into a full-service agency serving clients across the GCC.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Today, with over 200 projects delivered and a team of 15+ specialists, we continue 
+                to help businesses transform their digital presence and achieve measurable growth. 
+                Our approach combines local insight with global best practices to create campaigns 
+                that resonate and convert.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
