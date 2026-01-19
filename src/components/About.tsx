@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
 import logoBlue from "@/assets/logo-blue.png";
+import PatternDecoration from "./PatternDecoration";
 
 const About = () => {
   const ref = useRef(null);
@@ -78,8 +79,8 @@ const About = () => {
               <div className="bg-background rounded-xl p-8 md:p-12">
                 {/* Brand mark display */}
                 <div className="aspect-square max-w-sm mx-auto flex items-center justify-center relative">
-                  {/* Pattern background */}
-                  <div className="absolute inset-0 star-pattern opacity-50 rounded-xl" />
+                {/* Pattern background */}
+                  <PatternDecoration className="absolute inset-0 w-full h-full object-contain opacity-30" />
                   
                   {/* VP Logo - using the actual logo */}
                   <img 
