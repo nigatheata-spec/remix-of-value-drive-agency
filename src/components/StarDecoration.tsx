@@ -1,18 +1,16 @@
-import { motion } from "framer-motion";
 import { forwardRef } from "react";
+import starSvg from "@/assets/star.svg";
 
 interface StarDecorationProps {
   className?: string;
   size?: "sm" | "md" | "lg";
   variant?: "blue" | "lime" | "white";
-  animated?: boolean;
 }
 
-const StarDecoration = forwardRef<HTMLDivElement, StarDecorationProps>(({
+const StarDecoration = forwardRef<HTMLImageElement, StarDecorationProps>(({
   className = "",
   size = "md",
-  variant = "blue",
-  animated = true
+  variant = "blue"
 }, ref) => {
   const sizeClasses = {
     sm: "w-4 h-4",
@@ -20,48 +18,21 @@ const StarDecoration = forwardRef<HTMLDivElement, StarDecorationProps>(({
     lg: "w-10 h-10"
   };
 
-  const colorClasses = {
-    blue: "fill-primary",
-    lime: "fill-accent",
-    white: "fill-white"
+  const filterStyles = {
+    blue: "", // Original blue color
+    lime: "brightness(0) saturate(100%) invert(83%) sepia(46%) saturate(523%) hue-rotate(29deg) brightness(103%) contrast(102%)",
+    white: "brightness(0) invert(1)"
   };
 
-  const StarSVG = (
-    <svg
-      viewBox="0 0 24 24"
-      className={`${sizeClasses[size]} ${colorClasses[variant]} ${className}`}
-    >
-      <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-    </svg>
+  return (
+    <img
+      ref={ref}
+      src={starSvg}
+      alt=""
+      className={`${sizeClasses[size]} ${className}`}
+      style={{ filter: filterStyles[variant] }}
+    />
   );
-
-  if (animated) {
-    return (
-      <motion.div
-        ref={ref}
-        animate={{
-          rotate: 360,
-          scale: [1, 1.1, 1]
-        }}
-        transition={{
-          rotate: {
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          },
-          scale: {
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-      >
-        {StarSVG}
-      </motion.div>
-    );
-  }
-
-  return <div ref={ref}>{StarSVG}</div>;
 });
 
 StarDecoration.displayName = 'StarDecoration';

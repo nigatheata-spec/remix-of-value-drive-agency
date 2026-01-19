@@ -18,7 +18,7 @@ const MarqueeBanner = () => {
       <div className="flex animate-marquee">
         {[...services, ...services].map((service, index) => (
           <div key={index} className="flex items-center gap-6 mx-6 whitespace-nowrap">
-            <StarDecoration size="sm" variant="white" animated={false} />
+            <StarDecoration size="sm" variant="white" />
             <span className="text-primary-foreground font-medium">{service}</span>
           </div>
         ))}

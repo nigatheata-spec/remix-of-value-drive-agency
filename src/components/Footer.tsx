@@ -63,7 +63,7 @@ const Footer = () => {
           {/* Services Links */}
           <div>
             <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-              <StarDecoration size="sm" variant="lime" animated={false} />
+              <StarDecoration size="sm" variant="lime" />
               Services
             </h3>
             <ul className="space-y-3">
@@ -83,7 +83,7 @@ const Footer = () => {
           {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-              <StarDecoration size="sm" variant="blue" animated={false} />
+              <StarDecoration size="sm" variant="blue" />
               Company
             </h3>
             <ul className="space-y-3">
@@ -103,7 +103,7 @@ const Footer = () => {
           {/* Location */}
           <div>
             <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-              <StarDecoration size="sm" variant="lime" animated={false} />
+              <StarDecoration size="sm" variant="lime" />
               Location
             </h3>
             <address className="not-italic text-secondary-foreground/60 leading-relaxed">
