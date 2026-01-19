@@ -5,26 +5,57 @@ import { ArrowRight, Target, Zap, Globe, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
 import logoWhite from "@/assets/logo-white.png";
-const timeline = [{
-  year: "2019",
-  title: "The Spark",
-  description: "Started as a freelance collective with a vision to change how brands communicate in the Arab world."
-}, {
-  year: "2020",
-  title: "First Office",
-  description: "Opened our Riyadh headquarters and assembled a team of 5 passionate marketers and creatives."
-}, {
-  year: "2022",
-  title: "Major Milestone",
-  description: "Crossed 100+ successful projects and expanded our service offerings to full-stack marketing."
-}, {
-  year: "2024",
-  title: "Regional Expansion",
-  description: "Now serving clients across the GCC with a team of 15+ specialists and growing."
-}];
+
+const timelineData = [
+  {
+    title: "2019",
+    content: (
+      <div>
+        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">The Spark</h4>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          Started as a freelance collective with a vision to change how brands communicate in the Arab world.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2020",
+    content: (
+      <div>
+        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">First Office</h4>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          Opened our Riyadh headquarters and assembled a team of 5 passionate marketers and creatives.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2022",
+    content: (
+      <div>
+        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">Major Milestone</h4>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          Crossed 100+ successful projects and expanded our service offerings to full-stack marketing.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2024",
+    content: (
+      <div>
+        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">Regional Expansion</h4>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          Now serving clients across the GCC with a team of 15+ specialists and growing.
+        </p>
+      </div>
+    ),
+  },
+];
 const team = [{
   name: "Ahmed Al-Rashid",
   role: "Founder & CEO",
@@ -112,6 +143,7 @@ const AboutPage = () => {
     once: true,
     margin: "-100px"
   });
+  
   const principlesRef = useRef(null);
   const principlesInView = useInView(principlesRef, {
     once: true,
@@ -223,61 +255,14 @@ const AboutPage = () => {
         }} animate={timelineInView ? {
           opacity: 1,
           y: 0
-        } : {}} className="text-center mb-20">
+        } : {}} className="text-center mb-10">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Journey</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4">
               From Idea to <span className="text-primary">Impact</span>
             </h2>
           </motion.div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
-            <motion.div initial={{
-            scaleY: 0
-          }} animate={timelineInView ? {
-            scaleY: 1
-          } : {}} transition={{
-            duration: 1,
-            delay: 0.3
-          }} className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary origin-top" style={{
-            transform: "translateX(-50%)"
-          }} />
-
-            {timeline.map((item, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            x: index % 2 === 0 ? -50 : 50
-          }} animate={timelineInView ? {
-            opacity: 1,
-            x: 0
-          } : {}} transition={{
-            delay: 0.5 + index * 0.2,
-            duration: 0.6
-          }} className={`relative flex items-center mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                {/* Year Bubble */}
-                <motion.div initial={{
-              scale: 0
-            }} animate={timelineInView ? {
-              scale: 1
-            } : {}} transition={{
-              delay: 0.7 + index * 0.2,
-              type: "spring",
-              bounce: 0.5
-            }} className="absolute left-8 md:left-1/2 w-16 h-16 -translate-x-1/2 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-primary/30 z-10">
-                  {item.year}
-                </motion.div>
-
-                {/* Content Card */}
-                <div className={`ml-24 md:ml-0 md:w-5/12 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <motion.div whileHover={{
-                scale: 1.02,
-                y: -5
-              }} className="bg-card p-6 rounded-2xl border border-border shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </motion.div>
-                </div>
-              </motion.div>)}
-          </div>
+          <Timeline data={timelineData} />
         </div>
       </section>
 
