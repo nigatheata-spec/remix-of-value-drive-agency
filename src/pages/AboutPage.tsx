@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { ArrowRight, Target, Zap, Globe, Heart } from "lucide-react";
+import { ArrowRight, Target, Zap, Globe, Heart, Sparkles, Building2, Trophy, Rocket } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,10 +15,27 @@ const timelineData = [
     title: "2019",
     content: (
       <div>
-        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">The Spark</h4>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+            <Sparkles className="w-6 h-6 text-primary" />
+          </div>
+          <h4 className="text-xl md:text-2xl font-bold text-foreground">The Spark</h4>
+        </div>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
           Started as a freelance collective with a vision to change how brands communicate in the Arab world.
         </p>
+        <div className="grid grid-cols-2 gap-2">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" 
+            alt="Team brainstorming" 
+            className="rounded-lg w-full h-24 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" 
+            alt="Creative work" 
+            className="rounded-lg w-full h-24 object-cover"
+          />
+        </div>
       </div>
     ),
   },
@@ -26,10 +43,27 @@ const timelineData = [
     title: "2020",
     content: (
       <div>
-        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">First Office</h4>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+            <Building2 className="w-6 h-6 text-primary" />
+          </div>
+          <h4 className="text-xl md:text-2xl font-bold text-foreground">First Office</h4>
+        </div>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
           Opened our Riyadh headquarters and assembled a team of 5 passionate marketers and creatives.
         </p>
+        <div className="grid grid-cols-2 gap-2">
+          <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop" 
+            alt="Modern office" 
+            className="rounded-lg w-full h-24 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop" 
+            alt="Team collaboration" 
+            className="rounded-lg w-full h-24 object-cover"
+          />
+        </div>
       </div>
     ),
   },
@@ -37,10 +71,25 @@ const timelineData = [
     title: "2022",
     content: (
       <div>
-        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">Major Milestone</h4>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+            <Trophy className="w-6 h-6 text-primary" />
+          </div>
+          <h4 className="text-xl md:text-2xl font-bold text-foreground">Major Milestone</h4>
+        </div>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
           Crossed 100+ successful projects and expanded our service offerings to full-stack marketing.
         </p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">100+ Projects</span>
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Full-Stack Marketing</span>
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Growing Team</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=300&fit=crop" 
+          alt="Celebrating success" 
+          className="rounded-lg w-full h-32 object-cover"
+        />
       </div>
     ),
   },
@@ -48,10 +97,37 @@ const timelineData = [
     title: "2024",
     content: (
       <div>
-        <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">Regional Expansion</h4>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+            <Rocket className="w-6 h-6 text-primary" />
+          </div>
+          <h4 className="text-xl md:text-2xl font-bold text-foreground">Regional Expansion</h4>
+        </div>
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
           Now serving clients across the GCC with a team of 15+ specialists and growing.
         </p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">15+ Specialists</span>
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">GCC Coverage</span>
+          <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Global Standards</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          <img 
+            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=300&h=200&fit=crop" 
+            alt="Team meeting" 
+            className="rounded-lg w-full h-20 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=200&fit=crop" 
+            alt="Office workspace" 
+            className="rounded-lg w-full h-20 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" 
+            alt="Presentation" 
+            className="rounded-lg w-full h-20 object-cover"
+          />
+        </div>
       </div>
     ),
   },
