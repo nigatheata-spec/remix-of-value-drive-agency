@@ -212,57 +212,7 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Bar - Horizontal Scroll Effect */}
-      <section className="py-16 bg-primary relative overflow-hidden">
-        <motion.div initial={{
-        x: "-100%"
-      }} whileInView={{
-        x: 0
-      }} transition={{
-        duration: 0.8,
-        ease: "easeOut"
-      }} viewport={{
-        once: true
-      }} className="absolute inset-0 bg-gradient-to-r from-primary via-royal-dark to-primary" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[{
-            value: 200,
-            suffix: "+",
-            label: "Projects Delivered"
-          }, {
-            value: 50,
-            suffix: "+",
-            label: "Happy Clients"
-          }, {
-            value: 5,
-            suffix: "+",
-            label: "Years Experience"
-          }, {
-            value: 15,
-            suffix: "+",
-            label: "Team Members"
-          }].map((stat, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            scale: 0.5
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            delay: index * 0.1,
-            duration: 0.5,
-            type: "spring"
-          }} viewport={{
-            once: true
-          }}>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
-              </motion.div>)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Timeline Section */}
       <section className="section-padding bg-background" ref={timelineRef}>
