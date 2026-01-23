@@ -7,6 +7,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   isRTL: boolean;
   t: (key: string) => string;
+  isTransitioning: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -227,12 +228,27 @@ export const translations = {
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>(() => {
+  const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
     return (saved as Language) || 'en';
   });
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const isRTL = language === 'ar';
+
+  const setLanguage = (newLang: Language) => {
+    if (newLang !== language) {
+      setIsTransitioning(true);
+      // Small delay to show loading before changing
+      setTimeout(() => {
+        setLanguageState(newLang);
+      }, 100);
+    }
+  };
+
+  const handleTransitionComplete = () => {
+    setIsTransitioning(false);
+  };
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -246,10 +262,25 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, isRTL, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, isRTL, t, isTransitioning }}>
       {children}
+      {isTransitioning && (
+        <LanguageTransitionScreen onComplete={handleTransitionComplete} />
+      )}
     </LanguageContext.Provider>
   );
+};
+
+// Inline transition component to avoid circular imports
+const LanguageTransitionScreen = ({ onComplete }: { onComplete: () => void }) => {
+  const { useEffect } = React;
+  
+  useEffect(() => {
+    const timer = setTimeout(onComplete, 1600);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
+  return null; // We'll render the actual loading screen in App.tsx
 };
 
 export const useLanguage = () => {

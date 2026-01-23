@@ -11,7 +11,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       className="fixed inset-0 z-[100] flex items-center justify-center bg-midnight"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ duration: 0.8, delay: 2 }}
+      transition={{ duration: 0.6, delay: 1.5 }}
       onAnimationComplete={onComplete}
     >
       {/* Animated background glow */}
@@ -30,42 +30,44 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         />
       </div>
 
-      {/* Logo animation */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.6,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="relative z-10"
-      >
+      {/* Logo animation - properly centered */}
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <motion.div
-          animate={{
-            opacity: [1, 0.7, 1],
-          }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
+            duration: 0.4,
+            ease: [0.16, 1, 0.3, 1],
           }}
         >
-          <Logo variant="white" className="scale-150" />
+          <motion.div
+            animate={{
+              opacity: [1, 0.7, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="flex items-center justify-center"
+          >
+            <Logo variant="white" className="scale-150" />
+          </motion.div>
         </motion.div>
 
         {/* Loading bar */}
-        <div className="mt-8 w-48 h-1 bg-white/10 rounded-full overflow-hidden mx-auto">
+        <div className="mt-8 w-48 h-1 bg-white/10 rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-primary rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{
-              duration: 1.8,
+              duration: 1.2,
               ease: "easeInOut",
             }}
           />
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
