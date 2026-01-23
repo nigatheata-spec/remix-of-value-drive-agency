@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { CardStack, CardStackItem } from "./ui/card-stack";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const projects: CardStackItem[] = [
   {
@@ -52,20 +53,21 @@ const projects: CardStackItem[] = [
 const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t, isRTL } = useLanguage();
 
   return (
     <section id="portfolio" className="section-padding bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-6" ref={ref}>
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-          <div>
+        <div className={`flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+          <div className={isRTL ? 'text-right' : ''}>
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
               className="text-sm font-semibold text-primary uppercase tracking-wider"
             >
-              Portfolio
+              {t('portfolio.tag')}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -73,7 +75,7 @@ const Portfolio = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4"
             >
-              Latest <span className="text-primary">Work</span>
+              {t('portfolio.title')} <span className="text-primary">{t('portfolio.titleHighlight')}</span>
             </motion.h2>
           </div>
           <motion.div
@@ -81,10 +83,10 @@ const Portfolio = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Button variant="outline" className="gap-2" asChild>
+            <Button variant="outline" className={`gap-2 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
               <Link to="/portfolio">
-                View All Projects
-                <ExternalLink className="w-4 h-4" />
+                {t('portfolio.viewAll')}
+                <ExternalLink className={`w-4 h-4 ${isRTL ? 'mr-2' : ''}`} />
               </Link>
             </Button>
           </motion.div>
@@ -119,7 +121,7 @@ const Portfolio = () => {
                 
                 {/* Tag */}
                 {item.tag && (
-                  <div className="absolute top-4 left-4">
+                  <div className={`absolute top-4 ${isRTL ? 'right-4' : 'left-4'}`}>
                     <span className="px-3 py-1 rounded-full bg-accent/90 text-midnight text-xs font-semibold">
                       {item.tag}
                     </span>
@@ -127,7 +129,7 @@ const Portfolio = () => {
                 )}
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className={`absolute bottom-0 left-0 right-0 p-6 ${isRTL ? 'text-right' : ''}`}>
                   <h3 className={`text-2xl font-bold text-white transition-all ${active ? 'mb-2' : ''}`}>
                     {item.title}
                   </h3>

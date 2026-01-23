@@ -3,46 +3,45 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Palette, Megaphone, TrendingUp, Globe, Video, BarChart3 } from "lucide-react";
 import { GradFlow } from "gradflow";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Brand Identity",
-    description: "Create a unique, consistent visual system that defines your brand and makes it memorable."
-  },
-  {
-    icon: Megaphone,
-    title: "Social Media Management",
-    description: "Strategic content creation and community management across all social platforms."
-  },
-  {
-    icon: TrendingUp,
-    title: "Paid Advertising",
-    description: "Data-driven campaigns that maximize ROI across Google, Meta, and other platforms."
-  },
-  {
-    icon: Globe,
-    title: "Website Development",
-    description: "Beautiful, high-performing websites that convert visitors into customers."
-  },
-  {
-    icon: Video,
-    title: "Content Production",
-    description: "Engaging videos, photography, and creative assets that tell your story."
-  },
-  {
-    icon: BarChart3,
-    title: "Growth Strategy",
-    description: "Comprehensive planning and consulting to scale your business sustainably."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px"
-  });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t, isRTL } = useLanguage();
+
+  const services = [
+    {
+      icon: Palette,
+      title: t('services.brandIdentity.title'),
+      description: t('services.brandIdentity.desc')
+    },
+    {
+      icon: Megaphone,
+      title: t('services.socialMedia.title'),
+      description: t('services.socialMedia.desc')
+    },
+    {
+      icon: TrendingUp,
+      title: t('services.paidAds.title'),
+      description: t('services.paidAds.desc')
+    },
+    {
+      icon: Globe,
+      title: t('services.webDev.title'),
+      description: t('services.webDev.desc')
+    },
+    {
+      icon: Video,
+      title: t('services.content.title'),
+      description: t('services.content.desc')
+    },
+    {
+      icon: BarChart3,
+      title: t('services.growth.title'),
+      description: t('services.growth.desc')
+    }
+  ];
 
   return (
     <section id="services" className="section-padding bg-secondary text-secondary-foreground relative overflow-hidden">
@@ -61,14 +60,14 @@ const Services = () => {
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'font-["Tajawal"]' : ''}`}>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold text-accent uppercase tracking-wider"
           >
-            Our Services
+            {t('services.tag')}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -76,8 +75,8 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6"
           >
-            Everything You Need to{" "}
-            <span className="text-accent">Grow</span>
+            {t('services.title')}{" "}
+            <span className="text-accent">{t('services.titleHighlight')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -85,8 +84,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-secondary-foreground/70"
           >
-            Comprehensive solutions tailored to your needs—from brand strategy 
-            to execution, we've got you covered.
+            {t('services.subtitle')}
           </motion.p>
         </div>
 
@@ -99,10 +97,10 @@ const Services = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="group relative bg-midnight-light/50 hover:bg-midnight-light rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-accent/30 backdrop-blur-sm"
+              className={`group relative bg-midnight-light/50 hover:bg-midnight-light rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-accent/30 backdrop-blur-sm ${isRTL ? 'text-right' : ''}`}
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
+              <div className={`w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors ${isRTL ? 'mr-auto' : 'ml-0'}`}>
                 <service.icon className="w-7 h-7 text-white" />
               </div>
 

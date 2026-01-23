@@ -4,11 +4,14 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +22,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Contact", href: "/contact" },
+    { label: t('nav.home'), href: "/" },
+    { label: t('nav.about'), href: "/about" },
+    { label: t('nav.services'), href: "/services" },
+    { label: t('nav.portfolio'), href: "/portfolio" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -41,13 +44,13 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between h-20 ${isRTL ? 'flex-row-reverse' : ''}`}>
           <Link to="/">
             <Logo variant={showWhiteLogo ? "white" : "default"} />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className={`hidden md:flex items-center gap-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -65,13 +68,14 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className={`hidden md:flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <LanguageToggle variant={showWhiteLogo ? "white" : "default"} />
             <Button 
               size="sm" 
               asChild
               className={showWhiteLogo ? "bg-white text-primary hover:bg-white/90" : ""}
             >
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t('nav.getStarted')}</Link>
             </Button>
           </div>
 
@@ -95,7 +99,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border"
           >
-            <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <nav className={`container mx-auto px-6 py-6 flex flex-col gap-4 ${isRTL ? 'items-end' : 'items-start'}`}>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -110,10 +114,11 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-border">
+              <div className="flex flex-col gap-3 pt-4 border-t border-border w-full">
+                <LanguageToggle />
                 <Button className="w-full" asChild>
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Get Started
+                    {t('nav.getStarted')}
                   </Link>
                 </Button>
               </div>
