@@ -1,18 +1,21 @@
 import { motion } from "framer-motion";
 import StarDecoration from "./StarDecoration";
-
-const services = [
-  "Brand Identity",
-  "Social Media Management",
-  "Paid Advertising",
-  "Website Development",
-  "Content Production",
-  "Growth Strategy",
-  "UI/UX Design",
-  "Motion Graphics",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MarqueeBanner = () => {
+  const { t } = useLanguage();
+
+  const services = [
+    t('marquee.brandIdentity'),
+    t('marquee.socialMedia'),
+    t('marquee.paidAds'),
+    t('marquee.webDev'),
+    t('marquee.content'),
+    t('marquee.growth'),
+    t('marquee.uiux'),
+    t('marquee.motion'),
+  ];
+
   return (
     <div className="bg-primary py-4 overflow-hidden">
       <div className="flex animate-marquee">
