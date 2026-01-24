@@ -18,6 +18,16 @@ import misuar from "@/assets/clients/misuar.jpg";
 import istanbulChicken from "@/assets/clients/istanbul-chicken.jpg";
 import mandyMeydan from "@/assets/clients/mandy-meydan.jpg";
 import orange from "@/assets/clients/orange.jpg";
+import taybaChicken from "@/assets/clients/tayba-chicken.jpg";
+import qalatAlsham from "@/assets/clients/qalat-alsham.jpg";
+import kayaTravel from "@/assets/clients/kaya-travel.jpg";
+import alagarDoner from "@/assets/clients/alagar-doner.jpg";
+import laNovia from "@/assets/clients/la-novia.jpg";
+import elbereket from "@/assets/clients/elbereket.jpg";
+import denizBaligi from "@/assets/clients/deniz-baligi.jpg";
+import wahatAlqiraat from "@/assets/clients/wahat-alqiraat.jpg";
+import vuntal from "@/assets/clients/vuntal.jpg";
+import mhmShipping from "@/assets/clients/mhm-shipping.jpg";
 
 const clients = [
   { name: "Tihama", logo: tihama },
@@ -30,6 +40,16 @@ const clients = [
   { name: "Istanbul Chicken", logo: istanbulChicken },
   { name: "Mandy Meydan", logo: mandyMeydan },
   { name: "Orange Şirinevler", logo: orange },
+  { name: "Tayba Chicken", logo: taybaChicken },
+  { name: "مطعم قلعة الشام", logo: qalatAlsham },
+  { name: "Kaya Travel", logo: kayaTravel },
+  { name: "Alagar Döner", logo: alagarDoner },
+  { name: "La Novia", logo: laNovia },
+  { name: "Elbereket Çiftliği", logo: elbereket },
+  { name: "Deniz Balığı", logo: denizBaligi },
+  { name: "أكاديمية واحة القراءات", logo: wahatAlqiraat },
+  { name: "Vuntal", logo: vuntal },
+  { name: "MHM Shipping", logo: mhmShipping },
 ];
 
 const PortfolioPage = () => {
