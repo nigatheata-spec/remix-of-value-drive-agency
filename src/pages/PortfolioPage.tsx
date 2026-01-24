@@ -107,7 +107,7 @@ const PortfolioPage = () => {
                 </p>
               </motion.div>
             ))}
-          </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
