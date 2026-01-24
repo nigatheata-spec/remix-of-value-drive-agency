@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
-import logoWhite from "@/assets/logo-white.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutPage = () => {
@@ -209,15 +208,6 @@ const AboutPage = () => {
           style={{ y: heroY, opacity: heroOpacity }} 
           className="container mx-auto px-6 relative z-10 text-center"
         >
-          <motion.div 
-            initial={{ scale: 0, rotate: -180 }} 
-            animate={{ scale: 1, rotate: 0 }} 
-            transition={{ duration: 0.8, type: "spring", bounce: 0.4 }} 
-            className="w-24 h-24 mx-auto mb-8"
-          >
-            <img src={logoWhite} alt="Value Plus" className="w-full h-full object-contain" />
-          </motion.div>
-          
           <motion.h1 
             initial={{ opacity: 0, y: 50 }} 
             animate={{ opacity: 1, y: 0 }} 
@@ -229,7 +219,7 @@ const AboutPage = () => {
               animate={{ opacity: 1, x: 0 }} 
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              {isRTL ? 'نحن لا نسوّق' : "We Don't Just"}
+              {isRTL ? 'نُسوّق العلامات التجارية فقط،' : "We Don't Just"}
             </motion.span>
             <br />
             <motion.span 
@@ -238,7 +228,7 @@ const AboutPage = () => {
               transition={{ delay: 0.7, duration: 0.6 }} 
               className="text-white"
             >
-              {isRTL ? 'العلامات التجارية' : 'Market Brands'}
+              {isRTL ? 'بل نُعيد ابتكارها' : 'Market Brands'}
             </motion.span>
           </motion.h1>
           
@@ -248,9 +238,9 @@ const AboutPage = () => {
             transition={{ delay: 1, duration: 0.8 }} 
             className="text-2xl md:text-3xl text-white/60 max-w-3xl mx-auto font-light"
           >
-            {isRTL ? 'نحن ' : 'We '}
-            <span className="text-accent font-semibold">{isRTL ? 'نحوّلها' : 'transform'}</span>
-            {isRTL ? '.' : ' them.'}
+            {isRTL ? '' : 'We '}
+            <span className="text-accent font-semibold">{isRTL ? '' : 'transform'}</span>
+            {isRTL ? '' : ' them.'}
           </motion.p>
         </motion.div>
       </section>
