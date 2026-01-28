@@ -13,13 +13,15 @@ import {
   PenTool,
   Camera,
   Share2,
-  Zap
+  Zap,
+  ArrowRight
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { GradFlow } from "gradflow";
 
 const ServicesPage = () => {
   const { t, isRTL } = useLanguage();
@@ -34,7 +36,6 @@ const ServicesPage = () => {
       features: isRTL 
         ? ["تصميم الشعار", "لوحة الألوان", "نظام الخطوط", "دليل الهوية", "تصميم القرطاسية"]
         : ["Logo Design", "Color Palette", "Typography System", "Brand Guidelines", "Stationery Design"],
-      color: "primary"
     },
     {
       icon: Megaphone,
@@ -43,7 +44,6 @@ const ServicesPage = () => {
       features: isRTL
         ? ["استراتيجية المحتوى", "تصميم المنشورات", "إدارة المجتمع", "تقارير التحليلات", "نمو التفاعل"]
         : ["Content Strategy", "Post Design", "Community Management", "Analytics Reporting", "Engagement Growth"],
-      color: "accent"
     },
     {
       icon: TrendingUp,
@@ -52,7 +52,6 @@ const ServicesPage = () => {
       features: isRTL
         ? ["إعلانات جوجل", "إعلانات ميتا", "إعلانات تيك توك", "إعادة الاستهداف", "اختبار A/B"]
         : ["Google Ads", "Meta Ads", "TikTok Ads", "Retargeting", "A/B Testing"],
-      color: "primary"
     },
     {
       icon: Globe,
@@ -61,7 +60,6 @@ const ServicesPage = () => {
       features: isRTL
         ? ["تصميم الواجهات", "التطوير المتجاوب", "التجارة الإلكترونية", "تحسين SEO", "دمج CMS"]
         : ["UI/UX Design", "Responsive Development", "E-commerce", "SEO Optimization", "CMS Integration"],
-      color: "accent"
     },
     {
       icon: Video,
@@ -70,7 +68,6 @@ const ServicesPage = () => {
       features: isRTL
         ? ["إنتاج الفيديو", "التصوير", "موشن جرافيك", "إنتاج البودكاست", "البث المباشر"]
         : ["Video Production", "Photography", "Motion Graphics", "Podcast Production", "Live Streaming"],
-      color: "primary"
     },
     {
       icon: BarChart3,
@@ -79,7 +76,6 @@ const ServicesPage = () => {
       features: isRTL
         ? ["بحث السوق", "تحليل المنافسين", "خارطة النمو", "تتبع المؤشرات", "الاستشارات"]
         : ["Market Research", "Competitor Analysis", "Growth Roadmap", "KPI Tracking", "Consultation"],
-      color: "accent"
     },
   ];
 
@@ -96,34 +92,40 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* Hero Section - Matching other pages */}
+      <section className="relative pt-32 pb-24 bg-midnight overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0">
+          <GradFlow config={{
+            color1: '#003DFA',
+            color2: '#000000',
+            color3: '#FFFFFF',
+            speed: 0.25,
+            scale: 1.3,
+            type: 'stripe',
+            noise: 0.08
+          }} />
+        </div>
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-midnight/50" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-sm font-semibold text-accent uppercase tracking-wider"
-          >
-            {t('servicesPage.tag')}
-          </motion.span>
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
+            className={`max-w-4xl ${isRTL ? 'text-right' : ''}`}
           >
-            {t('servicesPage.title')} <span className="text-primary">{t('servicesPage.titleHighlight')}</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl"
-          >
-            {t('servicesPage.subtitle')}
-          </motion.p>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
+              {t('servicesPage.tag')}
+            </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              {t('servicesPage.title')} <span className="text-white">{t('servicesPage.titleHighlight')}</span>
+            </h1>
+            <p className="text-xl text-white/60 max-w-2xl">
+              {t('servicesPage.subtitle')}
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -139,8 +141,8 @@ const ServicesPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover-lift ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-xl ${service.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} flex items-center justify-center mb-6 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <service.icon className={`w-7 h-7 ${service.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
+                <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
+                  <service.icon className="w-7 h-7 text-primary" />
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -191,18 +193,45 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-primary">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            {t('servicesPage.cta.title')}
-          </h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            {t('servicesPage.cta.subtitle')}
-          </p>
-          <Button size="lg" variant="secondary" className="text-base px-8" asChild>
-            <Link to="/contact">{t('servicesPage.cta.button')}</Link>
-          </Button>
+      {/* CTA Section - Matching other pages */}
+      <section className="py-24 bg-midnight relative overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0">
+          <GradFlow config={{
+            color1: '#003DFA',
+            color2: '#000000',
+            color3: '#FFFFFF',
+            speed: 0.25,
+            scale: 1.3,
+            type: 'stripe',
+            noise: 0.08
+          }} />
+        </div>
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-midnight/50" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {t('servicesPage.cta.title')}
+              </h2>
+              <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+                {t('servicesPage.cta.subtitle')}
+              </p>
+              <Button size="lg" className={`gap-2 text-base px-10 py-6 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
+                <Link to="/contact">
+                  {t('servicesPage.cta.button')}
+                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </section>
 

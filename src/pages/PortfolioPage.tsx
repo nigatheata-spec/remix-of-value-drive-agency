@@ -97,7 +97,7 @@ const PortfolioPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className={`max-w-4xl ${isRTL ? 'text-right' : ''}`}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
               {isRTL ? 'شركاء النجاح' : 'Success Partners'}
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">

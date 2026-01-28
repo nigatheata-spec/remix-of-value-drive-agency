@@ -170,8 +170,8 @@
     @apply py-20 md:py-32;
   }
   
-  /* Decorative lime line */
-  .lime-accent-line {
-    @apply h-0.5 bg-accent;
+  /* Decorative primary line */
+  .primary-accent-line {
+    @apply h-0.5 bg-primary;
   }
 }

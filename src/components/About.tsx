@@ -19,8 +19,8 @@ const About = () => {
 
   return (
     <section id="about" className="section-padding relative overflow-hidden">
-      {/* Lime accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
+      {/* Primary accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
       
       <div className="container mx-auto px-6" ref={ref}>
         <div className={`grid lg:grid-cols-2 gap-16 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
