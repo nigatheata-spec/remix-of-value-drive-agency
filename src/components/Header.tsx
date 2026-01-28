@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
@@ -68,7 +69,8 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className={`hidden md:flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+          <div className={`hidden md:flex items-center gap-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <ThemeToggle variant={showWhiteLogo ? "white" : "default"} />
             <LanguageToggle variant={showWhiteLogo ? "white" : "default"} />
             <Button 
               size="sm" 
@@ -114,8 +116,11 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-border w-full">
-                <LanguageToggle />
+              <div className={`flex flex-col gap-3 pt-4 border-t border-border w-full ${isRTL ? 'items-end' : 'items-start'}`}>
+                <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <ThemeToggle />
+                  <LanguageToggle />
+                </div>
                 <Button className="w-full" asChild>
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                     {t('nav.getStarted')}
