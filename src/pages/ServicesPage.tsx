@@ -97,7 +97,7 @@ const ServicesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-midnight overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
         <div className="container mx-auto px-6 relative z-10">
@@ -112,7 +112,7 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-white"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
           >
             {t('servicesPage.title')} <span className="text-primary">{t('servicesPage.titleHighlight')}</span>
           </motion.h1>
@@ -120,7 +120,7 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/70 max-w-2xl"
+            className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl"
           >
             {t('servicesPage.subtitle')}
           </motion.p>
@@ -161,13 +161,13 @@ const ServicesPage = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="section-padding bg-midnight">
+      <section className="section-padding bg-secondary">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
               {t('servicesPage.more.title')}
             </h2>
-            <p className="text-white/70">
+            <p className="text-secondary-foreground/70">
               {t('servicesPage.more.subtitle')}
             </p>
           </div>
@@ -180,11 +180,11 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white/5 rounded-xl p-6 text-center hover:bg-white/10 transition-colors"
+                className="bg-secondary-foreground/5 rounded-xl p-6 text-center hover:bg-secondary-foreground/10 transition-colors"
               >
                 <service.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-semibold text-white text-sm mb-1">{service.title}</h4>
-                <p className="text-xs text-white/60">{service.desc}</p>
+                <h4 className="font-semibold text-secondary-foreground text-sm mb-1">{service.title}</h4>
+                <p className="text-xs text-secondary-foreground/60">{service.desc}</p>
               </motion.div>
             ))}
           </div>

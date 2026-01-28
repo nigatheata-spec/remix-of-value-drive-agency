@@ -44,7 +44,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-midnight text-white relative overflow-hidden">
+    <section id="services" className="section-padding bg-secondary text-secondary-foreground relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 opacity-20">
         <GradFlow config={{
