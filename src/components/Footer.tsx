@@ -53,7 +53,7 @@ const Footer = () => {
 
           <div>
             <h3 className={`text-lg font-semibold mb-6 flex items-center gap-2 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
-              <StarDecoration size="sm" variant="lime" />
+              <StarDecoration size="sm" variant="blue" />
               {t('footer.services')}
             </h3>
             <ul className="space-y-3">
@@ -81,7 +81,7 @@ const Footer = () => {
 
           <div>
             <h3 className={`text-lg font-semibold mb-6 flex items-center gap-2 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
-              <StarDecoration size="sm" variant="lime" />
+              <StarDecoration size="sm" variant="blue" />
               {t('footer.location')}
             </h3>
             <address className="not-italic text-secondary-foreground/60 leading-relaxed whitespace-pre-line">
