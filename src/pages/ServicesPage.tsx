@@ -19,73 +19,86 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Brand Identity",
-    description: "Create a unique, consistent visual system that defines your brand and makes it memorable.",
-    features: ["Logo Design", "Color Palette", "Typography System", "Brand Guidelines", "Stationery Design"],
-    color: "primary"
-  },
-  {
-    icon: Megaphone,
-    title: "Social Media Management",
-    description: "Strategic content creation and community management across all social platforms.",
-    features: ["Content Strategy", "Post Design", "Community Management", "Analytics Reporting", "Engagement Growth"],
-    color: "accent"
-  },
-  {
-    icon: TrendingUp,
-    title: "Paid Advertising",
-    description: "Data-driven campaigns that maximize ROI across Google, Meta, and other platforms.",
-    features: ["Google Ads", "Meta Ads", "TikTok Ads", "Retargeting", "A/B Testing"],
-    color: "primary"
-  },
-  {
-    icon: Globe,
-    title: "Website Development",
-    description: "Beautiful, high-performing websites that convert visitors into customers.",
-    features: ["UI/UX Design", "Responsive Development", "E-commerce", "SEO Optimization", "CMS Integration"],
-    color: "accent"
-  },
-  {
-    icon: Video,
-    title: "Content Production",
-    description: "Engaging videos, photography, and creative assets that tell your story.",
-    features: ["Video Production", "Photography", "Motion Graphics", "Podcast Production", "Live Streaming"],
-    color: "primary"
-  },
-  {
-    icon: BarChart3,
-    title: "Growth Strategy",
-    description: "Comprehensive planning and consulting to scale your business sustainably.",
-    features: ["Market Research", "Competitor Analysis", "Growth Roadmap", "KPI Tracking", "Consultation"],
-    color: "accent"
-  },
-];
-
-const additionalServices = [
-  { icon: PenTool, title: "Copywriting", desc: "Compelling copy that converts" },
-  { icon: Camera, title: "Photography", desc: "Professional brand imagery" },
-  { icon: Share2, title: "Influencer Marketing", desc: "Strategic partnerships" },
-  { icon: Zap, title: "Marketing Automation", desc: "Streamlined workflows" },
-  { icon: Target, title: "Lead Generation", desc: "Quality leads on demand" },
-  { icon: Sparkles, title: "AI Integration", desc: "Smart marketing tools" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesPage = () => {
+  const { t, isRTL } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const services = [
+    {
+      icon: Palette,
+      title: t('services.brandIdentity.title'),
+      description: t('services.brandIdentity.desc'),
+      features: isRTL 
+        ? ["تصميم الشعار", "لوحة الألوان", "نظام الخطوط", "دليل الهوية", "تصميم القرطاسية"]
+        : ["Logo Design", "Color Palette", "Typography System", "Brand Guidelines", "Stationery Design"],
+      color: "primary"
+    },
+    {
+      icon: Megaphone,
+      title: t('services.socialMedia.title'),
+      description: t('services.socialMedia.desc'),
+      features: isRTL
+        ? ["استراتيجية المحتوى", "تصميم المنشورات", "إدارة المجتمع", "تقارير التحليلات", "نمو التفاعل"]
+        : ["Content Strategy", "Post Design", "Community Management", "Analytics Reporting", "Engagement Growth"],
+      color: "accent"
+    },
+    {
+      icon: TrendingUp,
+      title: t('services.paidAds.title'),
+      description: t('services.paidAds.desc'),
+      features: isRTL
+        ? ["إعلانات جوجل", "إعلانات ميتا", "إعلانات تيك توك", "إعادة الاستهداف", "اختبار A/B"]
+        : ["Google Ads", "Meta Ads", "TikTok Ads", "Retargeting", "A/B Testing"],
+      color: "primary"
+    },
+    {
+      icon: Globe,
+      title: t('services.webDev.title'),
+      description: t('services.webDev.desc'),
+      features: isRTL
+        ? ["تصميم الواجهات", "التطوير المتجاوب", "التجارة الإلكترونية", "تحسين SEO", "دمج CMS"]
+        : ["UI/UX Design", "Responsive Development", "E-commerce", "SEO Optimization", "CMS Integration"],
+      color: "accent"
+    },
+    {
+      icon: Video,
+      title: t('services.content.title'),
+      description: t('services.content.desc'),
+      features: isRTL
+        ? ["إنتاج الفيديو", "التصوير", "موشن جرافيك", "إنتاج البودكاست", "البث المباشر"]
+        : ["Video Production", "Photography", "Motion Graphics", "Podcast Production", "Live Streaming"],
+      color: "primary"
+    },
+    {
+      icon: BarChart3,
+      title: t('services.growth.title'),
+      description: t('services.growth.desc'),
+      features: isRTL
+        ? ["بحث السوق", "تحليل المنافسين", "خارطة النمو", "تتبع المؤشرات", "الاستشارات"]
+        : ["Market Research", "Competitor Analysis", "Growth Roadmap", "KPI Tracking", "Consultation"],
+      color: "accent"
+    },
+  ];
+
+  const additionalServices = [
+    { icon: PenTool, title: isRTL ? "كتابة المحتوى" : "Copywriting", desc: isRTL ? "نصوص مقنعة تحقق النتائج" : "Compelling copy that converts" },
+    { icon: Camera, title: isRTL ? "التصوير" : "Photography", desc: isRTL ? "صور احترافية للعلامة" : "Professional brand imagery" },
+    { icon: Share2, title: isRTL ? "التسويق عبر المؤثرين" : "Influencer Marketing", desc: isRTL ? "شراكات استراتيجية" : "Strategic partnerships" },
+    { icon: Zap, title: isRTL ? "أتمتة التسويق" : "Marketing Automation", desc: isRTL ? "سير عمل مبسط" : "Streamlined workflows" },
+    { icon: Target, title: isRTL ? "توليد العملاء" : "Lead Generation", desc: isRTL ? "عملاء محتملين بجودة عالية" : "Quality leads on demand" },
+    { icon: Sparkles, title: isRTL ? "دمج الذكاء الاصطناعي" : "AI Integration", desc: isRTL ? "أدوات تسويق ذكية" : "Smart marketing tools" },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.span
@@ -93,7 +106,7 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-sm font-semibold text-accent uppercase tracking-wider"
           >
-            What We Do
+            {t('servicesPage.tag')}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -101,7 +114,7 @@ const ServicesPage = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
           >
-            Our <span className="text-primary">Services</span>
+            {t('servicesPage.title')} <span className="text-primary">{t('servicesPage.titleHighlight')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -109,7 +122,7 @@ const ServicesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl"
           >
-            End-to-end marketing solutions designed to accelerate your growth and deliver measurable results.
+            {t('servicesPage.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -124,9 +137,9 @@ const ServicesPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover-lift"
+                className={`group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover-lift ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-xl ${service.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} flex items-center justify-center mb-6`}>
+                <div className={`w-14 h-14 rounded-xl ${service.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} flex items-center justify-center mb-6 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
                   <service.icon className={`w-7 h-7 ${service.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
                 </div>
                 
@@ -135,13 +148,12 @@ const ServicesPage = () => {
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <li key={i} className={`flex items-center gap-2 text-sm text-muted-foreground ${isRTL ? 'flex-row-reverse' : ''}`}>
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-
               </motion.div>
             ))}
           </div>
@@ -153,10 +165,10 @@ const ServicesPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
-              More Ways We Can Help
+              {t('servicesPage.more.title')}
             </h2>
             <p className="text-secondary-foreground/70">
-              Specialized services to complement your marketing strategy
+              {t('servicesPage.more.subtitle')}
             </p>
           </div>
           
@@ -183,13 +195,13 @@ const ServicesPage = () => {
       <section className="section-padding bg-primary">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Get Started?
+            {t('servicesPage.cta.title')}
           </h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            Let's discuss how we can help grow your business with our tailored marketing solutions.
+            {t('servicesPage.cta.subtitle')}
           </p>
           <Button size="lg" variant="secondary" className="text-base px-8" asChild>
-            <Link to="/contact">Schedule a Consultation</Link>
+            <Link to="/contact">{t('servicesPage.cta.button')}</Link>
           </Button>
         </div>
       </section>
