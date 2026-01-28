@@ -122,9 +122,9 @@ const ContactPage = () => {
               </div>
 
               {/* Quick Response */}
-              <div className="bg-accent/10 rounded-2xl p-6 border border-accent/20">
+              <div className="bg-primary/10 rounded-2xl p-6 border border-primary/20">
                 <div className={`flex items-center gap-3 mb-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  <Clock className="w-5 h-5 text-accent" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <h3 className="font-semibold">{t('contact.guarantee.title')}</h3>
                 </div>
                 <p className="text-muted-foreground text-sm">

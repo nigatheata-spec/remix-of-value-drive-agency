@@ -33,7 +33,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground pt-20 pb-8">
-      <div className="h-1 bg-accent" />
+      <div className="h-1 bg-primary" />
       
       <div className="container mx-auto px-6">
         <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-12 py-12 ${isRTL ? 'text-right' : ''}`}>

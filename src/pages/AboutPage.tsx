@@ -249,7 +249,7 @@ const AboutPage = () => {
             className="text-2xl md:text-3xl text-white/60 max-w-3xl mx-auto font-light"
           >
             {isRTL ? 'نحن ' : 'We '}
-            <span className="text-accent font-semibold">{isRTL ? 'نحوّلها' : 'transform'}</span>
+            <span className="text-primary font-semibold">{isRTL ? 'نحوّلها' : 'transform'}</span>
             {isRTL ? '.' : ' them.'}
           </motion.p>
         </motion.div>

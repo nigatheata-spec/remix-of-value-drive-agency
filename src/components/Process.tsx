@@ -38,8 +38,8 @@ const Process = () => {
 
   return (
     <section id="process" className="section-padding relative overflow-hidden bg-background">
-      {/* Decorative lime line */}
-      <div className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} w-1 h-full bg-gradient-to-b from-accent via-primary to-accent opacity-20`} />
+      {/* Decorative primary line */}
+      <div className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} w-1 h-full bg-gradient-to-b from-primary via-royal-light to-primary opacity-20`} />
       
       <div className="container mx-auto px-6" ref={ref}>
         {/* Section Header */}
@@ -74,7 +74,7 @@ const Process = () => {
         {/* Process Steps */}
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20 -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-royal-light to-primary opacity-20 -translate-y-1/2" />
 
           <div className={`grid lg:grid-cols-3 gap-8 lg:gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             {steps.map((step, index) => (
@@ -90,13 +90,13 @@ const Process = () => {
                   {/* Step Number */}
                   <div className={`flex items-center justify-between mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <span className="text-6xl font-black text-secondary">{step.number}</span>
-                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${step.color === "accent" ? "bg-accent/20" : "bg-primary/20"}`}>
-                      <step.icon className={`w-7 h-7 ${step.color === "accent" ? "text-accent" : "text-primary"}`} />
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/20">
+                      <step.icon className="w-7 h-7 text-primary" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <span className={`text-sm font-medium ${step.color === "accent" ? "text-accent" : "text-primary"}`}>
+                  <span className="text-sm font-medium text-primary">
                     {step.subtitle}
                   </span>
                   <h3 className="text-2xl font-bold mt-2 mb-4">{step.title}</h3>
@@ -105,7 +105,7 @@ const Process = () => {
                   </p>
 
                   {/* Decorative dot */}
-                  <div className={`hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 ${step.color === "accent" ? "bg-accent border-background" : "bg-primary border-background"}`} />
+                  <div className="hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 bg-primary border-background" />
                 </div>
               </motion.div>
             ))}
