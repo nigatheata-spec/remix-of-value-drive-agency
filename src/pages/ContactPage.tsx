@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { GradFlow } from "gradflow";
 
 const ContactPage = () => {
   const { t, isRTL } = useLanguage();
@@ -60,77 +61,89 @@ const ContactPage = () => {
     <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* Hero Section - Matching other pages */}
+      <section className="relative pt-32 pb-24 bg-midnight overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0">
+          <GradFlow config={{
+            color1: '#003DFA',
+            color2: '#000000',
+            color3: '#FFFFFF',
+            speed: 0.25,
+            scale: 1.3,
+            type: 'stripe',
+            noise: 0.08
+          }} />
+        </div>
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-midnight/50" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-sm font-semibold text-accent uppercase tracking-wider"
-          >
-            {t('contact.tag')}
-          </motion.span>
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mt-4 mb-6 text-secondary-foreground"
+            className={`max-w-4xl ${isRTL ? 'text-right' : ''}`}
           >
-            {t('contact.title')} <span className="text-primary">{t('contact.titleHighlight')}</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-secondary-foreground/70 max-w-2xl"
-          >
-            {t('contact.subtitle')}
-          </motion.p>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
+              {t('contact.tag')}
+            </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              {t('contact.title')} <span className="text-primary">{t('contact.titleHighlight')}</span>
+            </h1>
+            <p className="text-xl text-white/60 max-w-2xl">
+              {t('contact.subtitle')}
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding">
+      <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-6">
-          <div className={`grid lg:grid-cols-5 gap-16 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
+          <div className={`grid lg:grid-cols-5 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             {/* Contact Info */}
             <div className={`lg:col-span-2 ${isRTL ? 'lg:col-start-4' : ''}`}>
-              <h2 className="text-2xl font-bold mb-8">{t('contact.info.title')}</h2>
-              
-              <div className="space-y-6 mb-12">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className={`flex gap-4 ${isRTL ? 'flex-row-reverse text-right' : ''}`}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <info.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">{info.title}</h3>
-                      <p className="text-foreground">{info.value}</p>
-                      <p className="text-sm text-muted-foreground">{info.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Quick Response */}
-              <div className="bg-primary/10 rounded-2xl p-6 border border-primary/20">
-                <div className={`flex items-center gap-3 mb-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  <Clock className="w-5 h-5 text-primary" />
-                  <h3 className="font-semibold">{t('contact.guarantee.title')}</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className={`text-2xl font-bold mb-8 ${isRTL ? 'text-right' : ''}`}>{t('contact.info.title')}</h2>
+                
+                <div className="space-y-6 mb-12">
+                  {contactInfo.map((info, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className={`flex gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 ${isRTL ? 'flex-row-reverse text-right' : ''}`}
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                        <info.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground">{info.title}</h3>
+                        <p className="text-foreground">{info.value}</p>
+                        <p className="text-sm text-muted-foreground">{info.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  {t('contact.guarantee.desc')}
-                </p>
-              </div>
+
+                {/* Quick Response */}
+                <div className="bg-primary/10 rounded-2xl p-6 border border-primary/20">
+                  <div className={`flex items-center gap-3 mb-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <Clock className="w-5 h-5 text-primary" />
+                    <h3 className="font-semibold">{t('contact.guarantee.title')}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    {t('contact.guarantee.desc')}
+                  </p>
+                </div>
+              </motion.div>
             </div>
 
             {/* Contact Form */}
@@ -139,7 +152,7 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-card rounded-2xl p-8 border border-border"
+                className="bg-card rounded-2xl p-8 border border-border shadow-lg"
               >
                 <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <MessageSquare className="w-6 h-6 text-primary" />
@@ -155,7 +168,7 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder={isRTL ? "محمد أحمد" : "John Doe"}
-                        className={isRTL ? 'text-right' : ''}
+                        className={`bg-background ${isRTL ? 'text-right' : ''}`}
                       />
                     </div>
                     <div>
@@ -166,7 +179,7 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder={isRTL ? "name@company.com" : "john@company.com"}
-                        className={isRTL ? 'text-right' : ''}
+                        className={`bg-background ${isRTL ? 'text-right' : ''}`}
                         dir="ltr"
                       />
                     </div>
@@ -179,7 +192,7 @@ const ContactPage = () => {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder={isRTL ? "اسم الشركة" : "Your Company"}
-                        className={isRTL ? 'text-right' : ''}
+                        className={`bg-background ${isRTL ? 'text-right' : ''}`}
                       />
                     </div>
                     <div>
@@ -187,7 +200,7 @@ const ContactPage = () => {
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className={`w-full h-10 px-3 rounded-md border border-input bg-background text-sm ${isRTL ? 'text-right' : ''}`}
+                        className={`w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 ${isRTL ? 'text-right' : ''}`}
                       >
                         <option value="">{t('contact.form.serviceSelect')}</option>
                         {services.map((service) => (
@@ -205,7 +218,7 @@ const ContactPage = () => {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder={t('contact.form.messagePlaceholder')}
                       rows={5}
-                      className={isRTL ? 'text-right' : ''}
+                      className={`bg-background ${isRTL ? 'text-right' : ''}`}
                     />
                   </div>
                   
@@ -220,14 +233,49 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="h-[400px] bg-secondary relative">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsla(var(--royal-blue)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsla(var(--royal-blue)/0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-secondary-foreground">{t('contact.address.value')}</h3>
-            <p className="text-secondary-foreground/60">{t('contact.address.desc')}</p>
+      {/* CTA Section - Matching other pages */}
+      <section className="section-padding">
+        <div className="container mx-auto px-6">
+          <div className="relative py-24 rounded-3xl overflow-hidden">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden">
+              <GradFlow config={{
+                color1: '#003DFA',
+                color2: '#000000',
+                color3: '#FFFFFF',
+                speed: 0.25,
+                scale: 1.3,
+                type: 'stripe',
+                noise: 0.08
+              }} />
+            </div>
+            
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-midnight/50 rounded-3xl" />
+            
+            <div className="relative z-10 px-6">
+              <div className="max-w-3xl mx-auto text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <MapPin className="w-12 h-12 text-primary mx-auto mb-6" />
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    {t('contact.address.value')}
+                  </h2>
+                  <p className="text-xl text-white/70 mb-8">
+                    {t('contact.address.desc')}
+                  </p>
+                  <Button size="lg" className={`gap-2 text-base px-10 py-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      {isRTL ? 'احصل على الاتجاهات' : 'Get Directions'}
+                      <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
+                    </a>
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
