@@ -146,47 +146,51 @@ const PortfolioPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-midnight relative overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0">
-          <GradFlow config={{
-            color1: '#003DFA',
-            color2: '#000000',
-            color3: '#FFFFFF',
-            speed: 0.25,
-            scale: 1.3,
-            type: 'stripe',
-            noise: 0.08
-          }} />
-        </div>
-        
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-midnight/50" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                {isRTL ? 'هل تريد أن تكون' : 'Ready to Be Our Next'}
-                <br />
-                <span className="text-white">{isRTL ? 'عميلنا القادم؟' : 'Success Story?'}</span>
-              </h2>
-              <p className="text-xl text-white/70 mb-10">
-                {isRTL 
-                  ? 'دعنا نصنع شيئاً استثنائياً معاً.'
-                  : "Let's create something extraordinary together."}
-              </p>
-              <Button size="lg" className={`gap-2 text-base px-10 py-6 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
-                <Link to="/contact">
-                  {isRTL ? 'ابدأ مشروعك' : 'Start Your Project'}
-                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
-                </Link>
-              </Button>
-            </motion.div>
+      <section className="section-padding">
+        <div className="container mx-auto px-6">
+          <div className="relative py-24 rounded-3xl overflow-hidden">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden">
+              <GradFlow config={{
+                color1: '#003DFA',
+                color2: '#000000',
+                color3: '#FFFFFF',
+                speed: 0.25,
+                scale: 1.3,
+                type: 'stripe',
+                noise: 0.08
+              }} />
+            </div>
+            
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-midnight/50 rounded-3xl" />
+            
+            <div className="relative z-10 px-6">
+              <div className="max-w-3xl mx-auto text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    {isRTL ? 'هل تريد أن تكون' : 'Ready to Be Our Next'}
+                    <br />
+                    <span className="text-white">{isRTL ? 'عميلنا القادم؟' : 'Success Story?'}</span>
+                  </h2>
+                  <p className="text-xl text-white/70 mb-10">
+                    {isRTL 
+                      ? 'دعنا نصنع شيئاً استثنائياً معاً.'
+                      : "Let's create something extraordinary together."}
+                  </p>
+                  <Button size="lg" className={`gap-2 text-base px-10 py-6 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
+                    <Link to="/contact">
+                      {isRTL ? 'ابدأ مشروعك' : 'Start Your Project'}
+                      <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
