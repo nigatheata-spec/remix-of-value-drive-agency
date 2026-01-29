@@ -320,7 +320,7 @@ export const translations = {
     
     // Services Page
     'servicesPage.tag': 'ماذا نقدم',
-    'servicesPage.title': '',
+    'servicesPage.title': 'جميع',
     'servicesPage.titleHighlight': 'خدماتنا',
     'servicesPage.subtitle': 'حلول تسويقية شاملة مصممة لتسريع نموك وتحقيق نتائج قابلة للقياس.',
     'servicesPage.more.title': 'طرق أخرى لمساعدتك',
