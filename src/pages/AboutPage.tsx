@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
-import logoWhite from "@/assets/logo-white.png";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutPage = () => {
@@ -209,14 +209,6 @@ const AboutPage = () => {
           style={{ y: heroY, opacity: heroOpacity }} 
           className="container mx-auto px-6 relative z-10 text-center"
         >
-          <motion.div 
-            initial={{ scale: 0, rotate: -180 }} 
-            animate={{ scale: 1, rotate: 0 }} 
-            transition={{ duration: 0.8, type: "spring", bounce: 0.4 }} 
-            className="w-24 h-24 mx-auto mb-8"
-          >
-            <img src={logoWhite} alt="Value Plus" className="w-full h-full object-contain" />
-          </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 50 }} 
@@ -276,12 +268,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Principles Section - Professional Grid */}
-      <section className="section-padding bg-secondary relative overflow-hidden" ref={principlesRef}>
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        </div>
+      {/* Principles Section */}
+      <section className="section-padding bg-card" ref={principlesRef}>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className={`flex flex-col lg:flex-row gap-16 items-start ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
@@ -295,7 +283,7 @@ const AboutPage = () => {
               <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                 {isRTL ? 'كيف نعمل' : 'How We Work'}
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-secondary-foreground mt-4 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 leading-tight">
                 {isRTL ? '' : 'Our '}
                 <span className="text-primary">{isRTL ? 'مبادئنا' : 'Principles'}</span>
               </h2>
@@ -331,7 +319,7 @@ const AboutPage = () => {
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                           <principle.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <h3 className="text-xl font-bold text-secondary-foreground group-hover:text-primary transition-colors">
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                           {principle.title}
                         </h3>
                       </div>
