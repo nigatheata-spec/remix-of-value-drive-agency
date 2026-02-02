@@ -9,17 +9,61 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import client logos
 import tihama from "@/assets/clients/tihama.jpg";
+import sanaa from "@/assets/clients/sanaa.jpg";
 import alaqeed from "@/assets/clients/alaqeed.jpg";
+import royalLoyalley from "@/assets/clients/royal-loyalley.jpg";
 import tayba from "@/assets/clients/tayba.jpg";
+import star360 from "@/assets/clients/star360.png";
+import misuar from "@/assets/clients/misuar.jpg";
+import istanbulChicken from "@/assets/clients/istanbul-chicken.jpg";
 import mandyMeydan from "@/assets/clients/mandy-meydan.jpg";
+import orange from "@/assets/clients/orange.jpg";
+import taybaChicken from "@/assets/clients/tayba-chicken.jpg";
+import qalatAlsham from "@/assets/clients/qalat-alsham.jpg";
 import kayaTravel from "@/assets/clients/kaya-travel.jpg";
+import alagarDoner from "@/assets/clients/alagar-doner.jpg";
+import laNovia from "@/assets/clients/la-novia.jpg";
+import elbereket from "@/assets/clients/elbereket.jpg";
+import denizBaligi from "@/assets/clients/deniz-baligi.jpg";
+import wahatAlqiraat from "@/assets/clients/wahat-alqiraat.jpg";
+import vuntal from "@/assets/clients/vuntal.jpg";
+import mhmShipping from "@/assets/clients/mhm-shipping.jpg";
+import qalatAlsham2 from "@/assets/clients/qalat-alsham-2.png";
+import dalain from "@/assets/clients/dalain.jpg";
+import alsayadi from "@/assets/clients/alsayadi.png";
+import butterfly from "@/assets/clients/butterfly.jpg";
+import mandyMeydanIcon from "@/assets/clients/mandy-meydan-icon.png";
+import alaqeedHorizontal from "@/assets/clients/alaqeed-horizontal.png";
+import alakeedFalafel from "@/assets/clients/alakeed-falafel.png";
 
 const clients = [
   { name: "Tihama", logo: tihama },
+  { name: "Sana'a", logo: sanaa },
   { name: "Alaqeed Lokantasi", logo: alaqeed },
+  { name: "Royal Loyalley", logo: royalLoyalley },
   { name: "Tayba Special Restaurant", logo: tayba },
+  { name: "Star 360 Cafe", logo: star360 },
+  { name: "Misuar Restaurant", logo: misuar },
+  { name: "Istanbul Chicken", logo: istanbulChicken },
   { name: "Mandy Meydan", logo: mandyMeydan },
+  { name: "Orange Şirinevler", logo: orange },
+  { name: "Tayba Chicken", logo: taybaChicken },
+  { name: "مطعم قلعة الشام", logo: qalatAlsham },
   { name: "Kaya Travel", logo: kayaTravel },
+  { name: "Alagar Döner", logo: alagarDoner },
+  { name: "La Novia", logo: laNovia },
+  { name: "Elbereket Çiftliği", logo: elbereket },
+  { name: "Deniz Balığı", logo: denizBaligi },
+  { name: "أكاديمية واحة القراءات", logo: wahatAlqiraat },
+  { name: "Vuntal", logo: vuntal },
+  { name: "MHM Shipping", logo: mhmShipping },
+  { name: "قلعة الشام", logo: qalatAlsham2 },
+  { name: "Dalain", logo: dalain },
+  { name: "Alsayadi Home", logo: alsayadi },
+  { name: "Butterfly", logo: butterfly },
+  { name: "Mandy Meydan", logo: mandyMeydanIcon },
+  { name: "Alaqeed", logo: alaqeedHorizontal },
+  { name: "Al Akeed Falafel", logo: alakeedFalafel },
 ];
 
 const PortfolioPage = () => {
