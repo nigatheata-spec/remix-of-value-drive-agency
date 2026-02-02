@@ -281,12 +281,6 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
               className={`lg:w-1/3 lg:sticky lg:top-32 ${isRTL ? 'text-right' : ''}`}
             >
-              {/* Big Logo */}
-              <img 
-                src={logoBlue} 
-                alt="Value Plus" 
-                className="w-32 h-32 md:w-40 md:h-40 object-contain mb-8"
-              />
               <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                 {isRTL ? 'كيف نعمل' : 'How We Work'}
               </span>
@@ -300,6 +294,15 @@ const AboutPage = () => {
                   ? 'المعايير التي توجه كل قرار نتخذه والتي بنينا عليها سمعتنا.'
                   : 'The standards that guide every decision we make and have built our reputation on.'}
               </p>
+
+              {/* Big Logo (under paragraph) */}
+              <div className={`mt-10 ${isRTL ? 'flex justify-end' : 'flex justify-start'}`}>
+                <img 
+                  src={logoBlue} 
+                  alt="Value Plus" 
+                  className="w-48 h-48 md:w-56 md:h-56 object-contain"
+                />
+              </div>
             </motion.div>
 
             {/* Right side - Principles list */}
@@ -315,7 +318,7 @@ const AboutPage = () => {
                   <div className={`flex gap-6 py-8 border-b border-border/50 hover:border-primary/30 transition-colors ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                     {/* Number */}
                     <div className="flex-shrink-0">
-                      <span className="text-5xl font-black text-foreground/20 group-hover:text-foreground/40 transition-colors">
+                      <span className="text-5xl font-black text-foreground transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
