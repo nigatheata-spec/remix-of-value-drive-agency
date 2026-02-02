@@ -69,8 +69,8 @@ const AboutPage = () => {
           </h4>
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
             {isRTL 
-              ? 'نخدم الآن عملاء في جميع أنحاء الخليج بفريق من 15+ متخصصاً ونستمر في النمو.'
-              : 'Now serving clients across the GCC with a team of 15+ specialists and growing.'}
+              ? 'نخدم الآن عملاء في جميع أنحاء الخليج بفريق من 15+ متخصصاً في التسويق الرقمي ونستمر في النمو.'
+              : 'Now serving clients across the GCC with a dedicated team of 15+ digital marketing specialists and continuously growing.'}
           </p>
         </div>
       ),
