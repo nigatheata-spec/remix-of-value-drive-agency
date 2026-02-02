@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
-import logoBlue from "@/assets/logo-blue.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
@@ -23,13 +22,13 @@ const About = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
       
       <div className="container mx-auto px-6" ref={ref}>
-        <div className={`grid lg:grid-cols-2 gap-16 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
+        <div className={`grid lg:grid-cols-1 gap-16 items-center`}>
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className={isRTL ? 'lg:col-start-2 text-right' : ''}
+            className={isRTL ? 'text-right' : ''}
           >
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">
               {t('about.tag')}
@@ -61,32 +60,6 @@ const About = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Right Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={`relative ${isRTL ? 'lg:col-start-1 lg:row-start-1' : ''}`}
-          >
-            {/* Main visual card */}
-            <div className="relative bg-gradient-to-br from-primary to-royal-dark rounded-2xl p-1">
-              <div className="bg-background rounded-xl p-8 md:p-12">
-                {/* Brand mark display */}
-                <div className="aspect-square max-w-sm mx-auto flex items-center justify-center relative">
-                  {/* Pattern background */}
-                  <div className="absolute inset-0 star-pattern opacity-50 rounded-xl" />
-                  
-                  {/* VP Logo - using the actual logo */}
-                  <img 
-                    src={logoBlue}
-                    alt="Value Plus" 
-                    className="w-48 h-48 md:w-64 md:h-64 object-contain"
-                  />
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
