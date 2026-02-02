@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
-import logoBlue from "@/assets/logo-blue.png";
+
 
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -83,25 +83,25 @@ const AboutPage = () => {
       name: isRTL ? "أحمد الراشد" : "Ahmed Al-Rashid",
       role: isRTL ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
       bio: isRTL ? "+10 سنوات في استراتيجية العلامات" : "10+ years in brand strategy",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      initials: "AR"
     },
     {
       name: isRTL ? "سارة الفهد" : "Sara Al-Fahad",
       role: isRTL ? "المديرة الإبداعية" : "Creative Director",
       bio: isRTL ? "مصممة حائزة على جوائز" : "Award-winning designer",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face"
+      initials: "SF"
     },
     {
       name: isRTL ? "محمد حسن" : "Mohammed Hassan",
       role: isRTL ? "قائد الاستراتيجية" : "Strategy Lead",
       bio: isRTL ? "خبير نمو قائم على البيانات" : "Data-driven growth expert",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      initials: "MH"
     },
     {
       name: isRTL ? "فاطمة القحطاني" : "Fatima Al-Qahtani",
       role: isRTL ? "رئيسة المحتوى" : "Head of Content",
       bio: isRTL ? "متخصصة في سرد القصص" : "Storytelling specialist",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+      initials: "FQ"
     }
   ];
 
@@ -291,18 +291,9 @@ const AboutPage = () => {
               <div className="w-16 h-1 bg-primary mt-6" />
               <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
                 {isRTL 
-                  ? 'المعايير التي توجه كل قرار نتخذه والتي بنينا عليها سمعتنا.'
-                  : 'The standards that guide every decision we make and have built our reputation on.'}
+                  ? 'هذه المبادئ ليست مجرد كلمات على ورق - إنها الأساس الذي بنينا عليه سمعتنا على مدى سنوات من العمل الجاد. نؤمن بأن النجاح الحقيقي يأتي من الالتزام بقيم واضحة وتطبيقها في كل مشروع نعمل عليه. فريقنا ملتزم بتقديم أفضل النتائج لعملائنا مع الحفاظ على أعلى معايير الجودة والاحترافية.'
+                  : 'These principles aren\'t just words on paper - they\'re the foundation we\'ve built our reputation on over years of dedicated work. We believe that true success comes from committing to clear values and applying them in every project we undertake. Our team is dedicated to delivering the best results for our clients while maintaining the highest standards of quality and professionalism.'}
               </p>
-
-              {/* Big Logo (under paragraph) */}
-              <div className={`mt-10 ${isRTL ? 'flex justify-end' : 'flex justify-start'}`}>
-                <img 
-                  src={logoBlue} 
-                  alt="Value Plus" 
-                  className="w-48 h-48 md:w-56 md:h-56 object-contain"
-                />
-              </div>
             </motion.div>
 
             {/* Right side - Principles list */}
@@ -378,8 +369,14 @@ const AboutPage = () => {
                 className="group text-center"
               >
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
-                  <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.4 }}>
-                    <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }} 
+                    transition={{ duration: 0.4 }}
+                    className="w-full aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-border"
+                  >
+                    <span className="text-5xl md:text-6xl font-bold text-primary/60">
+                      {member.initials}
+                    </span>
                   </motion.div>
                   
                   <motion.div 
