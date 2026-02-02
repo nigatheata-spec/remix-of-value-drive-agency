@@ -7,46 +7,53 @@ import { CardStack, CardStackItem } from "./ui/card-stack";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Import real client images
+import tihama from "@/assets/clients/tihama.jpg";
+import mandyMeydan from "@/assets/clients/mandy-meydan.jpg";
+import qalatAlsham from "@/assets/clients/qalat-alsham.jpg";
+import laNovia from "@/assets/clients/la-novia.jpg";
+import kayaTravel from "@/assets/clients/kaya-travel.jpg";
+
 const projects: CardStackItem[] = [
   {
     id: 1,
-    title: "Chau Education",
-    description: "Complete brand identity and digital presence for educational excellence",
-    imageSrc: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+    title: "Tihama Restaurant",
+    description: "Complete brand identity and visual presence for authentic cuisine",
+    imageSrc: tihama,
     href: "/portfolio",
-    tag: "Branding • Website • Social Media",
+    tag: "Branding • Social Media",
   },
   {
     id: 2,
-    title: "Muzoon Investment",
-    description: "Premium corporate identity reflecting trust and growth",
-    imageSrc: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
+    title: "Mandy Meydan",
+    description: "Premium restaurant identity reflecting tradition and quality",
+    imageSrc: mandyMeydan,
     href: "/portfolio",
-    tag: "Branding • Website • Printing",
+    tag: "Branding • Photography",
   },
   {
     id: 3,
-    title: "Sofa Health",
-    description: "Modern healthcare branding with intuitive digital experience",
-    imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+    title: "Qalat Alsham",
+    description: "Authentic Syrian restaurant branding with cultural depth",
+    imageSrc: qalatAlsham,
     href: "/portfolio",
-    tag: "Branding • Website • Mobile App",
+    tag: "Branding • Menu Design",
   },
   {
     id: 4,
-    title: "Miras Show",
-    description: "Dynamic entertainment brand with captivating animations",
-    imageSrc: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600&h=400&fit=crop",
+    title: "La Novia",
+    description: "Elegant branding for memorable celebrations",
+    imageSrc: laNovia,
     href: "/portfolio",
-    tag: "Branding • Animation",
+    tag: "Branding • Event Design",
   },
   {
     id: 5,
-    title: "Al Faisal Group",
-    description: "Luxury real estate branding with sophisticated visual language",
-    imageSrc: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    title: "Kaya Travel",
+    description: "Dynamic travel agency branding with global appeal",
+    imageSrc: kayaTravel,
     href: "/portfolio",
-    tag: "Branding • Website • Marketing",
+    tag: "Branding • Marketing",
   },
 ];
 
