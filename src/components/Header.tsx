@@ -32,8 +32,8 @@ const Header = () => {
 
   const isActive = (href: string) => location.pathname === href;
   
-  // Check if we're on a page with dark hero (home or about)
-  const hasDarkHero = location.pathname === "/" || location.pathname === "/about";
+  // Check if we're on a page with dark hero (home, about, services, portfolio)
+  const hasDarkHero = ["/", "/about", "/services", "/portfolio"].includes(location.pathname);
   const showWhiteLogo = hasDarkHero && !isScrolled;
 
   return (
