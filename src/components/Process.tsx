@@ -89,7 +89,7 @@ const Process = () => {
                 <div className={`bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300 hover-lift ${isRTL ? 'text-right' : ''}`}>
                   {/* Step Number */}
                   <div className={`flex items-center justify-between mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="text-6xl font-black text-foreground/20">{step.number}</span>
+                    <span className="text-6xl font-black text-foreground">{step.number}</span>
                     <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/20">
                       <step.icon className="w-7 h-7 text-primary" />
                     </div>
