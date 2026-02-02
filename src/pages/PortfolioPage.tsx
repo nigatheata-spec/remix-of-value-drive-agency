@@ -35,94 +35,42 @@ import butterfly from "@/assets/clients/butterfly.jpg";
 import mandyMeydanIcon from "@/assets/clients/mandy-meydan-icon.png";
 import alaqeedHorizontal from "@/assets/clients/alaqeed-horizontal.png";
 import alakeedFalafel from "@/assets/clients/alakeed-falafel.png";
-const clients = [{
-  name: "Tihama",
-  logo: tihama
-}, {
-  name: "Sana'a",
-  logo: sanaa
-}, {
-  name: "Alaqeed Lokantasi",
-  logo: alaqeed
-}, {
-  name: "Royal Loyalley",
-  logo: royalLoyalley
-}, {
-  name: "Tayba Special Restaurant",
-  logo: tayba
-}, {
-  name: "Star 360 Cafe",
-  logo: star360
-}, {
-  name: "Misuar Restaurant",
-  logo: misuar
-}, {
-  name: "Istanbul Chicken",
-  logo: istanbulChicken
-}, {
-  name: "Mandy Meydan",
-  logo: mandyMeydan
-}, {
-  name: "Orange Şirinevler",
-  logo: orange
-}, {
-  name: "Tayba Chicken",
-  logo: taybaChicken
-}, {
-  name: "مطعم قلعة الشام",
-  logo: qalatAlsham
-}, {
-  name: "Kaya Travel",
-  logo: kayaTravel
-}, {
-  name: "Alagar Döner",
-  logo: alagarDoner
-}, {
-  name: "La Novia",
-  logo: laNovia
-}, {
-  name: "Elbereket Çiftliği",
-  logo: elbereket
-}, {
-  name: "Deniz Balığı",
-  logo: denizBaligi
-}, {
-  name: "أكاديمية واحة القراءات",
-  logo: wahatAlqiraat
-}, {
-  name: "Vuntal",
-  logo: vuntal
-}, {
-  name: "MHM Shipping",
-  logo: mhmShipping
-}, {
-  name: "قلعة الشام",
-  logo: qalatAlsham2
-}, {
-  name: "Dalain",
-  logo: dalain
-}, {
-  name: "Alsayadi Home",
-  logo: alsayadi
-}, {
-  name: "Butterfly",
-  logo: butterfly
-}, {
-  name: "Mandy Meydan",
-  logo: mandyMeydanIcon
-}, {
-  name: "Alaqeed",
-  logo: alaqeedHorizontal
-}, {
-  name: "Al Akeed Falafel",
-  logo: alakeedFalafel
-}];
+
+const clients = [
+  { name: "Tihama", logo: tihama },
+  { name: "Sana'a", logo: sanaa },
+  { name: "Alaqeed Lokantasi", logo: alaqeed },
+  { name: "Royal Loyalley", logo: royalLoyalley },
+  { name: "Tayba Special Restaurant", logo: tayba },
+  { name: "Star 360 Cafe", logo: star360 },
+  { name: "Misuar Restaurant", logo: misuar },
+  { name: "Istanbul Chicken", logo: istanbulChicken },
+  { name: "Mandy Meydan", logo: mandyMeydan },
+  { name: "Orange Şirinevler", logo: orange },
+  { name: "Tayba Chicken", logo: taybaChicken },
+  { name: "مطعم قلعة الشام", logo: qalatAlsham },
+  { name: "Kaya Travel", logo: kayaTravel },
+  { name: "Alagar Döner", logo: alagarDoner },
+  { name: "La Novia", logo: laNovia },
+  { name: "Elbereket Çiftliği", logo: elbereket },
+  { name: "Deniz Balığı", logo: denizBaligi },
+  { name: "أكاديمية واحة القراءات", logo: wahatAlqiraat },
+  { name: "Vuntal", logo: vuntal },
+  { name: "MHM Shipping", logo: mhmShipping },
+  { name: "قلعة الشام", logo: qalatAlsham2 },
+  { name: "Dalain", logo: dalain },
+  { name: "Alsayadi Home", logo: alsayadi },
+  { name: "Butterfly", logo: butterfly },
+  { name: "Mandy Meydan", logo: mandyMeydanIcon },
+  { name: "Alaqeed", logo: alaqeedHorizontal },
+  { name: "Al Akeed Falafel", logo: alakeedFalafel },
+];
+
 const PortfolioPage = () => {
-  const {
-    t,
-    isRTL
-  } = useLanguage();
-  return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+  const { t, isRTL } = useLanguage();
+
+  return (
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
       
       {/* Hero Section */}
@@ -130,33 +78,35 @@ const PortfolioPage = () => {
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <GradFlow config={{
-          color1: '#003DFA',
-          color2: '#000000',
-          color3: '#FFFFFF',
-          speed: 0.25,
-          scale: 1.3,
-          type: 'stripe',
-          noise: 0.08
-        }} />
+            color1: '#003DFA',
+            color2: '#000000',
+            color3: '#FFFFFF',
+            speed: 0.25,
+            scale: 1.3,
+            type: 'stripe',
+            noise: 0.08
+          }} />
         </div>
         
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-midnight/50" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} className={`max-w-4xl ${isRTL ? 'text-right' : ''}`}>
-            
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`max-w-4xl ${isRTL ? 'text-right' : ''}`}
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
+              {isRTL ? 'شركاء النجاح' : 'Success Partners'}
+            </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               {isRTL ? 'عملاؤنا' : 'Our Clients'}
             </h1>
             <p className="text-xl text-white/60 max-w-2xl">
-              {isRTL ? 'نفخر بشراكتنا مع أفضل العلامات التجارية التي منحتنا ثقتها لبناء هويتها ونجاحها.' : 'We are proud to partner with the best brands who trusted us to build their identity and success.'}
+              {isRTL 
+                ? 'نفخر بشراكتنا مع أفضل العلامات التجارية التي منحتنا ثقتها لبناء هويتها ونجاحها.'
+                : 'We are proud to partner with the best brands who trusted us to build their identity and success.'}
             </p>
           </motion.div>
         </div>
@@ -165,30 +115,32 @@ const PortfolioPage = () => {
       {/* Clients Grid */}
       <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-6">
-          <motion.div initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 1
-        }} transition={{
-          duration: 0.3
-        }} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
-            {clients.map((client, index) => <motion.div key={client.name} initial={{
-            opacity: 0,
-            scale: 0.9
-          }} animate={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.4,
-            delay: index * 0.05
-          }} className="group">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8"
+          >
+            {clients.map((client, index) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="group"
+              >
                 <div className="relative aspect-square overflow-hidden rounded-2xl bg-card border border-border p-4 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 hover:-translate-y-1">
-                  <img src={client.logo} alt={client.name} className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <p className={`mt-3 text-sm font-medium text-muted-foreground text-center group-hover:text-foreground transition-colors`}>
                   {client.name}
                 </p>
-              </motion.div>)}
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -200,14 +152,14 @@ const PortfolioPage = () => {
             {/* Animated gradient background */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden">
               <GradFlow config={{
-              color1: '#003DFA',
-              color2: '#000000',
-              color3: '#FFFFFF',
-              speed: 0.25,
-              scale: 1.3,
-              type: 'stripe',
-              noise: 0.08
-            }} />
+                color1: '#003DFA',
+                color2: '#000000',
+                color3: '#FFFFFF',
+                speed: 0.25,
+                scale: 1.3,
+                type: 'stripe',
+                noise: 0.08
+              }} />
             </div>
             
             {/* Dark overlay */}
@@ -215,22 +167,20 @@ const PortfolioPage = () => {
             
             <div className="relative z-10 px-6">
               <div className="max-w-3xl mx-auto text-center">
-                <motion.div initial={{
-                opacity: 0,
-                y: 30
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
                   <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                     {isRTL ? 'هل تريد أن تكون' : 'Ready to Be Our Next'}
                     <br />
                     <span className="text-white">{isRTL ? 'عميلنا القادم؟' : 'Success Story?'}</span>
                   </h2>
                   <p className="text-xl text-white/70 mb-10">
-                    {isRTL ? 'دعنا نصنع شيئاً استثنائياً معاً.' : "Let's create something extraordinary together."}
+                    {isRTL 
+                      ? 'دعنا نصنع شيئاً استثنائياً معاً.'
+                      : "Let's create something extraordinary together."}
                   </p>
                   <Button size="lg" className={`gap-2 text-base px-10 py-6 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
                     <Link to="/contact">
@@ -246,6 +196,8 @@ const PortfolioPage = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default PortfolioPage;
