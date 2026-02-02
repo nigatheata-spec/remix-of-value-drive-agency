@@ -305,7 +305,7 @@ const AboutPage = () => {
                   transition={{ delay: 0.1 + index * 0.1, duration: 0.5 }} 
                   className="group"
                 >
-                  <div className={`flex items-start gap-6 py-8 min-h-[9rem] md:min-h-[10rem] border-b border-border/50 hover:border-primary/30 transition-colors ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                  <div className={`flex gap-6 py-8 border-b border-border/50 hover:border-primary/30 transition-colors ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                     {/* Number */}
                     <div className="flex-shrink-0">
                       <span className="text-5xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">
@@ -365,7 +365,7 @@ const AboutPage = () => {
                 animate={teamInView ? { opacity: 1, y: 0 } : {}} 
                 transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }} 
                 whileHover={{ y: -10 }} 
-                className="group text-center h-full flex flex-col"
+                className="group text-center"
               >
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.4 }}>
@@ -380,15 +380,9 @@ const AboutPage = () => {
                     <span className="text-white font-medium">{member.bio}</span>
                   </motion.div>
                 </div>
-
-                <div className="mt-auto">
-                  <h3 className="text-lg font-bold group-hover:text-primary transition-colors min-h-[1.75rem]">
-                    {member.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm min-h-[2.5rem]">
-                    {member.role}
-                  </p>
-                </div>
+                
+                <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{member.name}</h3>
+                <p className="text-muted-foreground text-sm">{member.role}</p>
               </motion.div>
             ))}
           </div>
