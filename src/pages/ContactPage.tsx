@@ -17,7 +17,7 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: t('contact.email.title'),
-      value: "hello@valueplus.sa",
+      value: "hello@valueplus.agency",
       description: t('contact.email.desc')
     },
     {
