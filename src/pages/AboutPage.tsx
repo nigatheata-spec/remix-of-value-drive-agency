@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
 import { GradFlow } from "gradflow";
+import logoBlue from "@/assets/logo-blue.png";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -280,6 +281,12 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
               className={`lg:w-1/3 lg:sticky lg:top-32 ${isRTL ? 'text-right' : ''}`}
             >
+              {/* Big Logo */}
+              <img 
+                src={logoBlue} 
+                alt="Value Plus" 
+                className="w-32 h-32 md:w-40 md:h-40 object-contain mb-8"
+              />
               <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                 {isRTL ? 'كيف نعمل' : 'How We Work'}
               </span>
@@ -308,7 +315,7 @@ const AboutPage = () => {
                   <div className={`flex gap-6 py-8 border-b border-border/50 hover:border-primary/30 transition-colors ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                     {/* Number */}
                     <div className="flex-shrink-0">
-                      <span className="text-5xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">
+                      <span className="text-5xl font-black text-foreground/20 group-hover:text-foreground/40 transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
