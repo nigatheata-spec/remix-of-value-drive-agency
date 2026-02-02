@@ -276,59 +276,73 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Principles Section - Staggered Grid */}
-      <section className="section-padding bg-secondary" ref={principlesRef}>
-        <div className="container mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={principlesInView ? { opacity: 1, y: 0 } : {}} 
-            className={`text-center mb-16 ${isRTL ? 'text-right' : ''}`}
-          >
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              {isRTL ? 'كيف نعمل' : 'How We Work'}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary-foreground mt-4">
-              {isRTL ? '' : 'Our '}
-              <span className="text-primary">{isRTL ? 'مبادئنا' : 'Principles'}</span>
-            </h2>
-          </motion.div>
+      {/* Principles Section - Professional Grid */}
+      <section className="section-padding bg-secondary relative overflow-hidden" ref={principlesRef}>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className={`flex flex-col lg:flex-row gap-16 items-start ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+            {/* Left side - Header */}
+            <motion.div 
+              initial={{ opacity: 0, x: isRTL ? 30 : -30 }} 
+              animate={principlesInView ? { opacity: 1, x: 0 } : {}} 
+              transition={{ duration: 0.6 }}
+              className={`lg:w-1/3 lg:sticky lg:top-32 ${isRTL ? 'text-right' : ''}`}
+            >
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                {isRTL ? 'كيف نعمل' : 'How We Work'}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary-foreground mt-4 leading-tight">
+                {isRTL ? '' : 'Our '}
+                <span className="text-primary">{isRTL ? 'مبادئنا' : 'Principles'}</span>
+              </h2>
+              <div className="w-16 h-1 bg-primary mt-6" />
+              <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
+                {isRTL 
+                  ? 'المعايير التي توجه كل قرار نتخذه والتي بنينا عليها سمعتنا.'
+                  : 'The standards that guide every decision we make and have built our reputation on.'}
+              </p>
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {principles.map((principle, index) => (
-              <motion.div 
-                key={index} 
-                initial={{ opacity: 0, y: 50, rotate: -2 }} 
-                animate={principlesInView ? { opacity: 1, y: 0, rotate: 0 } : {}} 
-                transition={{ delay: 0.2 + index * 0.15, duration: 0.6, type: "spring" }} 
-                whileHover={{ scale: 1.03, rotate: 1 }} 
-                className="group"
-              >
-                <div className="bg-background p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 h-full relative overflow-hidden">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }} 
-                    whileHover={{ opacity: 1, scale: 1 }} 
-                    className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" 
-                  />
-                  
-                  <div className={`relative z-10 ${isRTL ? 'text-right' : ''}`}>
-                    <motion.div 
-                      whileHover={{ rotate: 360, scale: 1.1 }} 
-                      transition={{ duration: 0.5 }} 
-                      className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 ${isRTL ? 'mr-0 ml-auto' : ''}`}
-                    >
-                      <principle.icon className="w-7 h-7 text-primary" />
-                    </motion.div>
+            {/* Right side - Principles list */}
+            <div className="lg:w-2/3 space-y-0">
+              {principles.map((principle, index) => (
+                <motion.div 
+                  key={index} 
+                  initial={{ opacity: 0, y: 20 }} 
+                  animate={principlesInView ? { opacity: 1, y: 0 } : {}} 
+                  transition={{ delay: 0.1 + index * 0.1, duration: 0.5 }} 
+                  className="group"
+                >
+                  <div className={`flex gap-6 py-8 border-b border-border/50 hover:border-primary/30 transition-colors ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                    {/* Number */}
+                    <div className="flex-shrink-0">
+                      <span className="text-5xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                    </div>
                     
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                      {principle.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {principle.description}
-                    </p>
+                    {/* Content */}
+                    <div className="flex-1 pt-2">
+                      <div className={`flex items-center gap-4 mb-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <principle.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-secondary-foreground group-hover:text-primary transition-colors">
+                          {principle.title}
+                        </h3>
+                      </div>
+                      <p className={`text-muted-foreground leading-relaxed ${isRTL ? 'pr-14' : 'pl-14'}`}>
+                        {principle.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
