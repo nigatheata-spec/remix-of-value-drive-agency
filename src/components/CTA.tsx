@@ -19,7 +19,7 @@ const CTA = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl p-8 md:p-16 overflow-hidden"
+          className="relative rounded-3xl p-8 md:p-16 overflow-hidden bg-midnight"
         >
           <div className="absolute inset-0">
             <GradFlow config={{ color1: '#003DFA', color2: '#000000', color3: '#1a1a2e', speed: 0.25, scale: 1.3, type: 'stripe', noise: 0.08 }} />
