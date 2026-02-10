@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Megaphone, TrendingUp, Globe, Video, BarChart3, Sparkles, Target, PenTool, Camera, Share2, Zap, ArrowRight } from "lucide-react";
+import { Sparkles, Target, PenTool, Camera, Share2, Zap, ArrowRight } from "lucide-react";
+import visualIdentityIcon from "@/assets/icons/visual-identity.svg";
+import socialMediaIcon from "@/assets/icons/social-media-management.svg";
+import advertisingIcon from "@/assets/icons/advertising-campaigns.svg";
+import webDevIcon from "@/assets/icons/website-development.svg";
+import contentCreationIcon from "@/assets/icons/content-creation.svg";
+import operationsIcon from "@/assets/icons/operations-management.svg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -19,32 +25,32 @@ const ServicesPage = () => {
     margin: "-100px"
   });
   const services = [{
-    icon: Palette,
+    icon: visualIdentityIcon,
     title: t('services.brandIdentity.title'),
     description: t('services.brandIdentity.desc'),
     features: isRTL ? ["تصميم الشعار", "لوحة الألوان", "نظام الخطوط", "دليل الهوية", "تصميم القرطاسية"] : ["Logo Design", "Color Palette", "Typography System", "Brand Guidelines", "Stationery Design"]
   }, {
-    icon: Megaphone,
+    icon: socialMediaIcon,
     title: t('services.socialMedia.title'),
     description: t('services.socialMedia.desc'),
     features: isRTL ? ["استراتيجية المحتوى", "تصميم المنشورات", "إدارة المجتمع", "تقارير التحليلات", "نمو التفاعل"] : ["Content Strategy", "Post Design", "Community Management", "Analytics Reporting", "Engagement Growth"]
   }, {
-    icon: TrendingUp,
+    icon: advertisingIcon,
     title: t('services.paidAds.title'),
     description: t('services.paidAds.desc'),
     features: isRTL ? ["إعلانات جوجل", "إعلانات ميتا", "إعلانات تيك توك", "إعادة الاستهداف", "اختبار A/B"] : ["Google Ads", "Meta Ads", "TikTok Ads", "Retargeting", "A/B Testing"]
   }, {
-    icon: Globe,
+    icon: webDevIcon,
     title: t('services.webDev.title'),
     description: t('services.webDev.desc'),
     features: isRTL ? ["تصميم الواجهات", "التطوير المتجاوب", "التجارة الإلكترونية", "تحسين SEO", "دمج CMS"] : ["UI/UX Design", "Responsive Development", "E-commerce", "SEO Optimization", "CMS Integration"]
   }, {
-    icon: Video,
+    icon: contentCreationIcon,
     title: t('services.content.title'),
     description: t('services.content.desc'),
     features: isRTL ? ["إنتاج الفيديو", "التصوير", "موشن جرافيك", "إنتاج البودكاست", "البث المباشر"] : ["Video Production", "Photography", "Motion Graphics", "Podcast Production", "Live Streaming"]
   }, {
-    icon: BarChart3,
+    icon: operationsIcon,
     title: t('services.growth.title'),
     description: t('services.growth.desc'),
     features: isRTL ? ["بحث السوق", "تحليل المنافسين", "خارطة النمو", "تتبع المؤشرات", "الاستشارات"] : ["Market Research", "Competitor Analysis", "Growth Roadmap", "KPI Tracking", "Consultation"]
@@ -129,7 +135,7 @@ const ServicesPage = () => {
             delay: index * 0.1
           }} className={`group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover-lift ${isRTL ? 'text-right' : ''}`}>
                 <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <service.icon className="w-7 h-7 text-primary" />
+                  <img src={service.icon} alt="" className="w-7 h-7 dark:invert" />
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
