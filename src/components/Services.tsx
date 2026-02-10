@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Megaphone, TrendingUp, Globe, Video, BarChart3 } from "lucide-react";
 import { GradFlow } from "gradflow";
 import { useLanguage } from "@/contexts/LanguageContext";
+import visualIdentityIcon from "@/assets/icons/visual-identity.svg";
+import socialMediaIcon from "@/assets/icons/social-media-management.svg";
+import advertisingIcon from "@/assets/icons/advertising-campaigns.svg";
+import webDevIcon from "@/assets/icons/website-development.svg";
+import contentCreationIcon from "@/assets/icons/content-creation.svg";
+import operationsIcon from "@/assets/icons/operations-management.svg";
 
 const Services = () => {
   const ref = useRef(null);
@@ -12,32 +17,32 @@ const Services = () => {
 
   const services = [
     {
-      icon: Palette,
+      icon: visualIdentityIcon,
       title: t('services.brandIdentity.title'),
       description: t('services.brandIdentity.desc')
     },
     {
-      icon: Megaphone,
+      icon: socialMediaIcon,
       title: t('services.socialMedia.title'),
       description: t('services.socialMedia.desc')
     },
     {
-      icon: TrendingUp,
+      icon: advertisingIcon,
       title: t('services.paidAds.title'),
       description: t('services.paidAds.desc')
     },
     {
-      icon: Globe,
+      icon: webDevIcon,
       title: t('services.webDev.title'),
       description: t('services.webDev.desc')
     },
     {
-      icon: Video,
+      icon: contentCreationIcon,
       title: t('services.content.title'),
       description: t('services.content.desc')
     },
     {
-      icon: BarChart3,
+      icon: operationsIcon,
       title: t('services.growth.title'),
       description: t('services.growth.desc')
     }
@@ -101,7 +106,7 @@ const Services = () => {
             >
               {/* Icon */}
               <div className={`w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors ${isRTL ? 'mr-auto' : 'ml-0'}`}>
-                <service.icon className="w-7 h-7 text-white" />
+                <img src={service.icon} alt="" className="w-7 h-7 invert" />
               </div>
 
               {/* Content */}

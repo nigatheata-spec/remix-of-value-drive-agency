@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Rocket, Settings, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import discoverIcon from "@/assets/icons/discover.svg";
+import planIcon from "@/assets/icons/plan.svg";
+import executeIcon from "@/assets/icons/execute.svg";
 
 const Process = () => {
   const ref = useRef(null);
@@ -12,7 +14,7 @@ const Process = () => {
   const steps = [
     {
       number: "01",
-      icon: Rocket,
+      icon: discoverIcon,
       title: t('process.step1.title'),
       subtitle: t('process.step1.subtitle'),
       description: t('process.step1.desc'),
@@ -20,7 +22,7 @@ const Process = () => {
     },
     {
       number: "02",
-      icon: Settings,
+      icon: planIcon,
       title: t('process.step2.title'),
       subtitle: t('process.step2.subtitle'),
       description: t('process.step2.desc'),
@@ -28,7 +30,7 @@ const Process = () => {
     },
     {
       number: "03",
-      icon: Zap,
+      icon: executeIcon,
       title: t('process.step3.title'),
       subtitle: t('process.step3.subtitle'),
       description: t('process.step3.desc'),
@@ -91,7 +93,7 @@ const Process = () => {
                   <div className={`flex items-center justify-between mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <span className="text-6xl font-black text-foreground">{step.number}</span>
                     <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/20">
-                      <step.icon className="w-7 h-7 text-primary" />
+                      <img src={step.icon} alt="" className="w-7 h-7 dark:invert" />
                     </div>
                   </div>
 
