@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -123,6 +124,11 @@ const PortfolioPage = () => {
     isRTL
   } = useLanguage();
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO
+        title="Portfolio — Value Plus"
+        description="Selected client work and case studies from Value Plus across branding, social media, and advertising."
+        path="/portfolio"
+      />
       <Header />
       
       {/* Hero Section */}

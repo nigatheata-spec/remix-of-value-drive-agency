@@ -10,6 +10,7 @@ import contentCreationIcon from "@/assets/icons/content-creation.svg";
 import operationsIcon from "@/assets/icons/operations-management.svg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -81,6 +82,11 @@ const ServicesPage = () => {
     desc: isRTL ? "أدوات تسويق ذكية" : "Smart marketing tools"
   }];
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO
+        title="Services — Value Plus"
+        description="Branding, social media, advertising, content creation, and web development services tailored for ambitious brands."
+        path="/services"
+      />
       <Header />
       
       {/* Hero Section - Matching other pages */}
@@ -138,7 +144,7 @@ const ServicesPage = () => {
                   <img src={service.icon} alt="" className="w-7 h-7 dark:invert" />
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <h2 className="text-xl font-semibold mb-3">{service.title}</h2>
                 <p className="text-muted-foreground mb-6">{service.description}</p>
                 
                 <ul className="space-y-2">
@@ -177,7 +183,7 @@ const ServicesPage = () => {
             once: true
           }} className="bg-secondary-foreground/5 rounded-xl p-6 text-center hover:bg-secondary-foreground/10 transition-colors">
                 <service.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-semibold text-secondary-foreground text-sm mb-1">{service.title}</h4>
+                <h3 className="font-semibold text-secondary-foreground text-sm mb-1">{service.title}</h3>
                 <p className="text-xs text-secondary-foreground/60">{service.desc}</p>
               </motion.div>)}
           </div>

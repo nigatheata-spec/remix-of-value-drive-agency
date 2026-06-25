@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,6 +51,11 @@ const ContactPage = () => {
     });
   };
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO
+        title="Contact — Value Plus"
+        description="Get in touch with Value Plus to start your next branding, marketing, or web development project."
+        path="/contact"
+      />
       <Header />
       
       {/* Hero Section - Matching other pages */}
