@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { ArrowRight, Target, Zap, Globe, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { Link } from "react-router-dom";
@@ -188,6 +189,11 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+      <SEO
+        title="About Us — Value Plus"
+        description="The story, team, and values behind Value Plus — a digital marketing agency serving brands across the GCC."
+        path="/about"
+      />
       <Header />
       
       {/* Hero Section - Full Screen with Parallax */}
