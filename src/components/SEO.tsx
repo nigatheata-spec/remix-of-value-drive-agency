@@ -13,6 +13,7 @@ const SEO = ({ title, description, path, image }: SEOProps) => {
   const url = `${SITE_URL}${path}`;
   return (
     <Helmet>
+      <meta name="robots" content="noindex, nofollow" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
