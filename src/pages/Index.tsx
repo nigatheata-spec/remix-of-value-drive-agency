@@ -26,6 +26,7 @@ const Index = () => {
         <Services />
         <Process />
         <Portfolio />
+        <ClientStatsDashboard />
         <CTA />
       </main>
       <Footer />
