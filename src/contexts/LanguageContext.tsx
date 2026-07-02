@@ -178,7 +178,7 @@ export const translations = {
     'nav.services': 'خدماتنا',
     'nav.portfolio': 'عملاؤنا',
     'nav.contact': 'تواصل معنا',
-    'nav.getStarted': 'ابدأ الآن',
+    'nav.getStarted': 'استشارة مجانية',
     
     // Hero
     'hero.title1': 'نبني حضورك الرقمي',
