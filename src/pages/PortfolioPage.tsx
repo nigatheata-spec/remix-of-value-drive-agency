@@ -125,9 +125,10 @@ const PortfolioPage = () => {
   } = useLanguage();
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <SEO
-        title="Portfolio — Value Plus"
-        description="Selected client work and case studies from Value Plus across branding, social media, and advertising."
+        title="Our Clients — Marketing Agency Case Studies in Saudi Arabia & UAE | Value Plus"
+        description="Growth marketing, performance ads and brand case studies from Value Plus clients across Saudi Arabia, the UAE and the Gulf."
         path="/portfolio"
+        keywords="marketing agency Riyadh, Saudi marketing agency case studies, performance marketing, growth marketing, Meta Ads, Google Ads, brand strategy, marketing agency UAE"
       />
       <Header />
       

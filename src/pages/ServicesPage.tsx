@@ -83,9 +83,10 @@ const ServicesPage = () => {
   }];
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <SEO
-        title="Services — Value Plus"
-        description="Branding, social media, advertising, content creation, and web development services tailored for ambitious brands."
+        title="Services — Performance & Digital Marketing in Saudi Arabia | Value Plus"
+        description="Growth marketing, performance marketing, Meta Ads, Google Ads, CRO, Shopify, website design, brand strategy, content and social media marketing for brands in Saudi Arabia, UAE and the Gulf."
         path="/services"
+        keywords="growth marketing, performance marketing, digital marketing, marketing agency, lead generation, Meta Ads, Google Ads, CRO, Shopify, website design, brand strategy, content marketing, social media marketing, AI automation, CRM, sales automation, revenue operations, business consulting"
       />
       <Header />
       

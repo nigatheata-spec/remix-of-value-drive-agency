@@ -52,9 +52,10 @@ const ContactPage = () => {
   };
   return <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <SEO
-        title="Contact — Value Plus"
-        description="Get in touch with Value Plus to start your next branding, marketing, or web development project."
+        title="Contact Value Plus — Book a Free Marketing Consultation in Riyadh"
+        description="Book a free consultation with Value Plus, a Saudi marketing agency in Riyadh serving brands across Saudi Arabia, the UAE and the Gulf."
         path="/contact"
+        keywords="free marketing consultation, Saudi marketing agency contact, marketing agency Riyadh, marketing agency UAE, business consulting"
       />
       <Header />
       
