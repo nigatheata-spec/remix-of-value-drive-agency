@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Portfolio from "@/components/Portfolio";
+import ClientStatsDashboard from "@/components/ClientStatsDashboard";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -25,6 +26,7 @@ const Index = () => {
         <Services />
         <Process />
         <Portfolio />
+        <ClientStatsDashboard />
         <CTA />
       </main>
       <Footer />

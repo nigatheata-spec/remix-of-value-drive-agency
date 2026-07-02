@@ -20,7 +20,7 @@ export const translations = {
     'nav.services': 'Services',
     'nav.portfolio': 'Our Clients',
     'nav.contact': 'Contact',
-    'nav.getStarted': 'Get Started',
+    'nav.getStarted': 'Free Consultation',
     
     // Hero
     'hero.title1': 'We Build Your Digital Presence',
@@ -178,7 +178,7 @@ export const translations = {
     'nav.services': 'خدماتنا',
     'nav.portfolio': 'عملاؤنا',
     'nav.contact': 'تواصل معنا',
-    'nav.getStarted': 'ابدأ الآن',
+    'nav.getStarted': 'استشارة مجانية',
     
     // Hero
     'hero.title1': 'نبني حضورك الرقمي',
