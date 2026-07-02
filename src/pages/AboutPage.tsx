@@ -190,9 +190,10 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       <SEO
-        title="About Us — Value Plus"
-        description="The story, team, and values behind Value Plus — a digital marketing agency serving brands across the GCC."
+        title="About Value Plus — Growth Marketing Agency in Saudi Arabia & UAE"
+        description="Meet Value Plus: a growth and digital marketing agency headquartered in Riyadh, helping brands scale across Saudi Arabia, the UAE and the wider Gulf region."
         path="/about"
+        keywords="Saudi marketing agency, marketing agency Riyadh, growth marketing Saudi Arabia, marketing agency UAE, Gulf marketing agency, business growth, marketing strategy"
       />
       <Header />
       
