@@ -7,15 +7,16 @@ interface SEOProps {
   description: string;
   path: string;
   image?: string;
+  keywords?: string;
 }
 
-const SEO = ({ title, description, path, image }: SEOProps) => {
+const SEO = ({ title, description, path, image, keywords }: SEOProps) => {
   const url = `${SITE_URL}${path}`;
   return (
     <Helmet>
-      <meta name="robots" content="noindex, nofollow" />
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
