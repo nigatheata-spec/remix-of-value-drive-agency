@@ -14,9 +14,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Value Plus — Digital Marketing Agency"
-        description="Value Plus helps brands grow through strategy, branding, content, social media, and web development across the GCC."
+        title="Value Plus — Saudi Marketing Agency | Growth & Digital Marketing"
+        description="Saudi marketing agency in Riyadh delivering growth, performance and digital marketing, lead generation, Meta & Google Ads across Saudi Arabia, UAE and the Gulf."
         path="/"
+        keywords="Saudi marketing agency, marketing agency Riyadh, digital marketing Saudi Arabia, growth marketing Saudi Arabia, marketing agency UAE, Gulf marketing agency, performance marketing, lead generation, Meta Ads, Google Ads"
       />
       <Header />
       <main>
