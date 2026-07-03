@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://valueplus.agency/sitemap.xml
+Sitemap: https://valueplusgrowth.com/sitemap.xml

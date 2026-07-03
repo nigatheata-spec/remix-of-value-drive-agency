@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://valueplus.agency";
+const SITE_URL = "https://valueplusgrowth.com";
 
 interface SEOProps {
   title: string;
