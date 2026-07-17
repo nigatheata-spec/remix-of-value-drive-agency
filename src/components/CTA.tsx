@@ -41,7 +41,7 @@ const CTA = () => {
                   <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className={`border-white text-white hover:bg-white/10 gap-2 text-base px-8 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
+              <Button size="lg" variant="outline" className={`bg-transparent border-white text-white hover:bg-white hover:text-primary gap-2 text-base px-8 ${isRTL ? 'flex-row-reverse' : ''}`} asChild>
                 <Link to="/contact">
                   <MessageCircle className="w-4 h-4" />
                   {t('cta.button2')}
