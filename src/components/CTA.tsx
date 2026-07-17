@@ -54,9 +54,13 @@ const CTA = () => {
                 <Mail className="w-4 h-4" />
                 <span>hello@valueplusgrowth.com</span>
               </a>
-              <a href="tel:+905525540140" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <a href="tel:+966509269977" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="w-4 h-4" />
-                <span>+90 552 554 01 40</span>
+                <span dir="ltr">+966 50 926 9977</span>
+              </a>
+              <a href="https://wa.me/966509269977" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
               </a>
             </motion.div>
           </div>
