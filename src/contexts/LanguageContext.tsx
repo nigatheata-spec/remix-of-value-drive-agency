@@ -309,7 +309,7 @@ export const translations = {
     'footer.services': 'خدماتنا',
     'footer.company': 'الشركة',
     'footer.location': 'الموقع',
-    'footer.address': 'المملكة العربية السعودية\nالرياض',
+    'footer.address': 'الرياض',
     'footer.email': 'البريد الإلكتروني:',
     'footer.rights': '© {year} فاليو بلس. جميع الحقوق محفوظة.',
     'footer.privacy': 'سياسة الخصوصية',
