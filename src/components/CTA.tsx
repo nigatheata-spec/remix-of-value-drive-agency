@@ -50,13 +50,13 @@ const CTA = () => {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }} className={`flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 pt-10 border-t border-white/10 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <a href="mailto:hello@valueplus.sa" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <a href="mailto:hello@valueplusgrowth.com" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Mail className="w-4 h-4" />
-                <span>hello@valueplus.sa</span>
+                <span>hello@valueplusgrowth.com</span>
               </a>
-              <a href="tel:+966500000000" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <a href="tel:+905525540140" className={`flex items-center gap-2 text-white/70 hover:text-white transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="w-4 h-4" />
-                <span>+966 50 000 0000</span>
+                <span>+90 552 554 01 40</span>
               </a>
             </motion.div>
           </div>

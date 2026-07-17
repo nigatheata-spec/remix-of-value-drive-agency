@@ -90,7 +90,8 @@ const Footer = () => {
             <div className="mt-6">
               <p className="text-secondary-foreground/60">
                 <strong className="text-secondary-foreground">{t('footer.email')}</strong><br />
-                hello@valueplus.agency
+                hello@valueplusgrowth.com<br />
+                info@valueplusgrowth.com
               </p>
             </div>
           </div>

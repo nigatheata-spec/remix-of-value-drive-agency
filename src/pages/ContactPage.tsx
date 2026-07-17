@@ -18,12 +18,17 @@ const ContactPage = () => {
   const contactInfo = [{
     icon: Mail,
     title: t('contact.email.title'),
-    value: "hello@valueplus.agency",
+    value: "hello@valueplusgrowth.com",
+    description: t('contact.email.desc')
+  }, {
+    icon: Mail,
+    title: t('contact.email.title'),
+    value: "info@valueplusgrowth.com",
     description: t('contact.email.desc')
   }, {
     icon: Phone,
     title: t('contact.phone.title'),
-    value: "+966 50 123 4567",
+    value: "+90 552 554 01 40",
     description: t('contact.phone.desc')
   }, {
     icon: MapPin,
