@@ -130,7 +130,7 @@ export const translations = {
     'contact.phone.title': 'Call Us',
     'contact.phone.desc': 'Sun-Thu, 9am-6pm',
     'contact.address.title': 'Visit Us',
-    'contact.address.value': 'Riyadh, Saudi Arabia',
+    'contact.address.value': 'Riyadh',
     'contact.address.desc': 'King Fahd Road, Business District',
     'contact.guarantee.title': 'Quick Response Guarantee',
     'contact.guarantee.desc': 'We respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.',
