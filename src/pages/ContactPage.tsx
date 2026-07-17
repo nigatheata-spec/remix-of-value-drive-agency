@@ -28,8 +28,21 @@ const ContactPage = () => {
   }, {
     icon: Phone,
     title: t('contact.phone.title'),
+    value: "+966 50 926 9977",
+    description: t('contact.phone.desc'),
+    href: "tel:+966509269977"
+  }, {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    value: "+966 50 926 9977",
+    description: t('contact.phone.desc'),
+    href: "https://wa.me/966509269977"
+  }, {
+    icon: Phone,
+    title: t('contact.phone.title'),
     value: "+90 552 554 01 40",
-    description: t('contact.phone.desc')
+    description: t('contact.phone.desc'),
+    href: "tel:+905525540140"
   }, {
     icon: MapPin,
     title: t('contact.address.title'),
