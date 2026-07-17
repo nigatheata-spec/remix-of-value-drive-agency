@@ -148,7 +148,11 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground">{info.title}</h3>
-                        <p className="text-foreground">{info.value}</p>
+                        {info.href ? (
+                          <a href={info.href} target={info.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" dir="ltr">{info.value}</a>
+                        ) : (
+                          <p className="text-foreground">{info.value}</p>
+                        )}
                         <p className="text-sm text-muted-foreground">{info.description}</p>
                       </div>
                     </motion.div>)}
