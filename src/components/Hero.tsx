@@ -84,7 +84,7 @@ const Hero = () => {
               { value: t('hero.stat3.value'), label: t('hero.stat3.label') }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
                 <div className="text-sm text-white/70">{stat.label}</div>
               </div>
             ))}
