@@ -288,7 +288,7 @@ export const translations = {
     'contact.phone.title': 'اتصل بنا',
     'contact.phone.desc': 'أحد-خميس، 9ص-6م',
     'contact.address.title': 'زرنا',
-    'contact.address.value': 'الرياض، السعودية',
+    'contact.address.value': 'الرياض',
     'contact.address.desc': 'طريق الملك فهد، منطقة الأعمال',
     'contact.guarantee.title': 'ضمان الرد السريع',
     'contact.guarantee.desc': 'نرد على جميع الاستفسارات خلال 24 ساعة في أيام العمل. للأمور العاجلة، اتصل بنا مباشرة.',
