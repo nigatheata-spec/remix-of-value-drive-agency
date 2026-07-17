@@ -151,7 +151,7 @@ export const translations = {
     'footer.services': 'Services',
     'footer.company': 'Company',
     'footer.location': 'Location',
-    'footer.address': 'Saudi Arabia\nRiyadh, Kingdom of Saudi Arabia',
+    'footer.address': 'Riyadh',
     'footer.email': 'Email:',
     'footer.rights': '© {year} Value Plus. All rights reserved.',
     'footer.privacy': 'Privacy Policy',
